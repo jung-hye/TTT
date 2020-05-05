@@ -206,6 +206,7 @@ input {
   cursor: pointer;
 }
 .contact {
+  display:flex;
   overflow:hidden;
   width:500px;
   margin:100px auto 0;
@@ -214,12 +215,12 @@ input {
   box-sizing:border-box;
 }
 .contact .left {
-  float:left;
+  /* float:left; */
   display:flex;
   justify-content:center;
   align-items:center;
   width:30%;
-  height:111px;
+  /* height:111px; */
   border-right:1px solid #333;
   font-size:18px;
   text-align:center;
@@ -227,7 +228,7 @@ input {
   box-sizing:border-box;
 }
 .contact .right {
-  float:left;
+  /* float:left; */
   width:70%;
   -webkit-box-sizing:border-box;
   box-sizing:border-box;
@@ -314,12 +315,13 @@ input {
     font-size:12px;
   }
   .contact {
+    display:flex;
     width:267px;
     margin-top:70px;
     font-size:14px;
   }
   .contact .left {
-    height:95px;
+    /* height:95px; */
     font-size:14px;
   }
   .contact .right {
