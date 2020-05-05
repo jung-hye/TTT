@@ -1,5 +1,6 @@
 html {
-  font-family:'NotoSans', '돋움', 'Dotum', Arial, Helvetica, sans-serif;
+  /* font-family: 'Noto Sans KR', sans-serif; */
+  font-family:'Noto Sans KR', '돋움', 'Dotum', Arial, Helvetica, sans-serif;
   line-height:1.2;
 }
 /* common */
@@ -21,6 +22,7 @@ input {
   background-size:60%;
   background-position:center;
   background-repeat:no-repeat;
+  cursor: pointer;
 }
 
 /* layout */
@@ -56,7 +58,7 @@ input {
   text-indent:-1000px;
 }
 .button--close-mobile {
-  /* display:none; */
+  display:none;
   position:absolute;
   top:10px;
   right:10px;
@@ -75,7 +77,7 @@ input {
   margin:0 auto;
 }
 .nav ul {
-  display:flex;
+  /* display:flex; */
   justify-content:space-between;
   align-items:center;
   width:100%;
@@ -85,10 +87,11 @@ input {
   font-weight:700;
 }
 .nav ul li {
-  /* display:inline-block; */
-  /* width:12.5%; */
-  /* text-align:center; */
+  display:inline-block;
+  width:14.2857142857%;
+  text-align:center;
   font-size:18px;
+  vertical-align:middle;
 }
 .nav ul a {
   color:#fff;
@@ -147,7 +150,7 @@ input {
   position:absolute;
   top:500px;
   left:50%;
-  width:85%;
+  width:90%;
   max-width:1346px;
   padding:110px 110px;
   background-color:#fff;
@@ -266,16 +269,21 @@ input {
     font-size:18px;
   }
   .nav ul {
+    display:flex;
     justify-content:center;
     flex-direction:column;
     height:100%;
   }
-  .nav li {
+  .nav ul li {
     display:block;
     width:100%;
     padding:10px 0;
     text-align: center;
     box-sizing:border-box;
+    border-bottom:.5px solid #eee;
+  }
+  .nav ul li:last-child {
+    border-bottom:none;
   }
   .nav a {
     display:inline-block;
@@ -306,12 +314,12 @@ input {
     font-size:12px;
   }
   .contact {
-    width:90%;
+    width:267px;
     margin-top:70px;
     font-size:14px;
   }
   .contact .left {
-    height:113px;
+    height:95px;
     font-size:14px;
   }
   .contact .right {

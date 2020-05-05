@@ -8,21 +8,24 @@
     <!-- [iOS] 알림영역 배경색상 지정 -->
     <meta name=”apple-mobile-web-app-status-bar-style” content=”black” />
     <link rel="stylesheet" href="lib/css/reset.css">
-    <link rel="stylesheet" href="lib/css/fonts.css">
+    <!-- <link rel="stylesheet" href="lib/css/fonts.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="lib/css/common.css">
     <link rel="stylesheet" href="lib/css/main.css">
     <script src="lib/js/jquery-3.5.1.slim.min.js"></script>
     <script src="lib/js/common.js"></script>
-    <title>TTT Home</title>
+    <title>Think Top Technology</title>
 </head>
 <body>
     <div id="" class="wrapper main">
+        <div class="bg-dim"></div>
+
         <header class="header">
             <nav class="nav">
                 <ul>
-                    <li>
+                    <!-- <li>
                         <a href="sub.html">About TTT</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="sub.html">유성</a>
                     </li>
@@ -33,9 +36,9 @@
                         <a href="sub.html">UV</a>
                     </li>
                     <li class="m-hidden">
-                        <a href="">
+                        <a href="index.html">
                             <h1 class="logo">
-                                <img src="lib/images/logo_text.png" alt="TTT">
+                                <img src="lib/images/logo_text.png" alt="TTT" style="opacity: 0;">
                             </h1>
                         </a>
                     </li>
@@ -57,6 +60,7 @@
         <div class="container">
             <section class="section-1">
                 <h2 class="section__tit">Think Top Technology</h2>
+                <span class="section__tit-2">Your Inspiration</span>
                 <div class="logo animate-1" data-smooth-scrolling="on">
                     <img src="lib/images/logo_text.png" alt="TTT">
                 </div>
@@ -121,75 +125,117 @@
 </script>
 <script>
     $(".button--menu-mobile").on("click", function () {
+        $(".bg-dim").css("display", "block");
         $(".header").toggle();
         $("body").toggleClass("menu_mobile");
     });
     $(".button--close-mobile").on("click", function () {
+        $(".bg-dim").css("display", "none");
         $(".header").toggle();
         $("body").toggleClass("menu_mobile");
     });
+    $(".bg-dim").on("click", function () {
+        $(".bg-dim").css("display", "none");
 
-    if(matchMedia("screen and (min-width: 769px)").matches) {
+        if($(".header").css("display") === "block") {
+            $(".header").css("display", "none");
+            $("body").toggleClass("menu_mobile");
+        }
+    })
+
+    function work () {
+        if(matchMedia("screen and (min-width: 769px)").matches) {
         var value = 10;
 
         $(window).scroll(function () {
             var scrollValue = $(window).scrollTop();
 
-            console.log(scrollValue);
+            // console.log(scrollValue);
 
-            function setValue(value) {
-                // $('.animate-1').animate({  opactiy: 0.8 }, {
-                //     step: function(now,fx) {
-                //         $(this).css('-webkit-transform','translateY('+ value +'px)'); 
-                //         $(this).css('-moz-transform','translateY('+ value +'px)');
-                //         $(this).css('transform','translateY('+ value +'px)');
-                //     },
-                //     duration:'500',
-                //     easing: 'swing',
-                // }, 500);
+            function animateScale(value) {
+                if(scrollValue < 150 ) {
+                    $(".animate-1").css("transform", "scale(1)");
+                    $(".animate-1").css("opacity", "1");
+                    $(".m-hidden").find('img').css("opacity", "0");
+                    $(".section__tit-2").css("opacity", "0");
 
-                // $('.animate-1').css('transform','translateY('+ value +'px)');
+                } else if(scrollValue >= 150 && scrollValue < 200) {
+                    $(".animate-1").css("transform", "scale(.9)");
+                    $(".animate-1").css("opacity", "1");
+                    $(".section__tit-2").css("opacity", "0");
+
+                } else if(scrollValue >= 200 && scrollValue < 250) {
+                    $(".animate-1").css("transform", "scale(.8)");
+                    $(".animate-1").css("opacity", "1");
+                    $(".section__tit-2").css("opacity", "0");
+
+                } else if(scrollValue >= 250 && scrollValue < 300) {
+                    $(".animate-1").css("transform", "scale(.7)");
+                    $(".animate-1").css("opacity", "1");
+                    $(".section__tit-2").css("opacity", "0");
+
+                } else if(scrollValue >= 300 && scrollValue < 350) {
+                    $(".animate-1").css("transform", "scale(.65)");
+                    $(".animate-1").css("opacity", "1");
+                    $(".section__tit-2").css("opacity", "0");
+
+                } else if(scrollValue >= 350 && scrollValue < 400) {
+                    $(".section__tit-2").css("opacity", "0");
+                    $(".animate-1").css("transform", "scale(.6)");
+                    $(".animate-1").css("opacity", "1");
+                } else if(scrollValue >= 400 && scrollValue < 535) {
+                    $(".section__tit-2").css("opacity", "1");
+                    $(".animate-1").css("transform", "scale(.55)");
+                    $(".animate-1").css("opacity", "1");
+                    // nav 로고 안보이게
+                    $(".m-hidden").find('img').css("opacity", "0");
+                    // header 안보이게
+                    setTimeout(() => {
+                        $(".header").css("display", "none");
+                    }, 50);
+                } else if(scrollValue >= 535) {
+                    // main 로고 안보이게
+                    $(".animate-1").css("opacity", "0");
+                    // header 안보이게
+                    $(".header").css("display", "block");
+                    var headerOffset = $('.header')[0].getBoundingClientRect().top;
+                    // console.log(headerOffset);
+                    if(headerOffset <= 0) {
+                        $(".header").addClass('fixed');
+                        if(scrollValue < 1120) {
+                            $(".header").removeClass('fixed');
+                        }
+                    }
+                    // nav 로고 보이게
+                    $(".m-hidden").find('img').css("opacity", "1");
+                }
+            }
+            function headerToggle() {
+                if(scrollValue >= 530) {
+                    // $(".header").css("display", "block");
+                    // var headerOffset = $('.header')[0].getBoundingClientRect().top;
+                    // if(headerOffset <= 0) {
+                    //     $(".header").addClass('fixed');
+                    // }else {
+                    //     $(".header").removeClass('fixed');
+                    // }
+                } else {
+                    $(".m-hidden").find('img').css("opacity", "1");
+                    setTimeout(() => {
+                        $(".header").css("display", "none");
+                    }, 50);
+                }
+
+
             }
 
-            // if(scrollValue >= 150 && scrollValue < 170) {
-            //     // alert(1);
-            //     setValue(30);
-            //     value += 30;
-            //     // console.log(value);
-            //     // console.log('1');
-            // }else if(scrollValue >= 170 && scrollValue < 190) {
-            //     setValue(90);
-            //     console.log('2');
-            // }else if(scrollValue >= 210 && scrollValue < 230) {
-            //     setValue(150);
-            //     console.log('3');
-            // }
-
-            // if(scrollValue >= 300) {
-            //     $(".animate-1").css("transform", "scale(.8)");
-            // }
-            if(scrollValue < 150 ) {
-                $(".animate-1").css("transform", "scale(1)");
-            }else if(scrollValue >= 150 && scrollValue < 200) {
-                $(".animate-1").css("transform", "scale(.9)");
-            }else if(scrollValue >= 200 && scrollValue < 250) {
-                $(".animate-1").css("transform", "scale(.9)");
-            }else if(scrollValue >= 250 && scrollValue < 300) {
-                $(".animate-1").css("transform", "scale(.8)");
-            }else if(scrollValue >= 300 && scrollValue < 350) {
-                $(".animate-1").css("transform", "scale(.8)");
-            }else if(scrollValue >= 350 && scrollValue < 400) {
-                $(".animate-1").css("transform", "scale(.6)");
-            }
-
-            if(scrollValue >= 490) {
-                $(".header").css("display", "block");
-            } else {
-                $(".header").css("display", "none");
-            }
-    })
+            animateScale();
+            // headerToggle();
+        });
+        }
     }
-
+work();
+$(window).on("resize", work)
 </script>
 </body>
 </html>
