@@ -67,7 +67,7 @@ section {
 }
 .section-1 .section__tit {
   position:relative;
-  top:40%;
+  top:420px;
   /* left:50%; */
   margin:0 auto;
   font-size:100px;
@@ -77,7 +77,7 @@ section {
 }
 .section-1 .logo {
   position:absolute;
-  bottom:40%;
+  bottom:550px;
   /* left:50%; */
   width:100%;
   /* max-width:165px; */
@@ -86,7 +86,7 @@ section {
   transform-origin:center;
   text-align:center;
 
-  animation-name: test;
+  /* animation-name: test; */
   animation-duration: 5s;
 
 }
