@@ -265,12 +265,19 @@ section {
 /* Media Query */
 /* 가로모드 모바일 디바이스 (가로 해상도가 768px 보다 작은 화면에 적용) */
 @media (max-width: 767px) {
+  body.menu_mobile {
+    overflow:hidden;
+    height:100%;
+    height:100vh;
+  }
   .header {
     /* display:block; */
     position:fixed;
     width:100%;
-    height:100vh;
+    /* height:100vh; */
+    padding:70px 0;
   }
+
   .nav {
     height:100%;
     font-size:16px;
@@ -283,7 +290,7 @@ section {
   .nav li {
     display:block;
     width:100%;
-    padding:15px 0;
+    padding:10px 0;
     text-align: center;
     box-sizing:border-box;
   }

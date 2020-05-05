@@ -119,9 +119,11 @@
 <script>
     $(".button--menu-mobile").on("click", function () {
         $(".header").toggle();
+        $("body").toggleClass("menu_mobile");
     });
     $(".button--close-mobile").on("click", function () {
-        $(".header").toggle();
+        $(".header").toggle("active");
+        $("body").toggleClass("menu_mobile");
     });
 </script>
 </body>
