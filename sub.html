@@ -7,7 +7,7 @@
     <!-- [iOS] 바탕화면의 아이콘을 통한 접속일경우 상단의 주소표시줄과 하단의 툴바를 제거하도록 옵션을 지정 -->
     <meta name=”apple-mobile-web-app-capable” contents=”yes” />
     <!-- [iOS] 알림영역 배경색상 지정 -->
-    <meta name=”apple-mobile-web-app-status-bar-style” content=”black” />
+    <meta name=”apple-mobile-web-app-status-bar-style” content=”white” />
     <link rel="stylesheet" href="lib/css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="lib/css/fonts.css">
@@ -206,9 +206,11 @@ setTimeout(scrollTo,0,0,1);
         if(modal.css("display") === "block") {
             modal.css("display", "none")
         }
-        if($(".header").css("display") === "block") {
-            $(".header").css("display", "none");
-            $("body").toggleClass("menu_mobile");
+        if(matchMedia("screen and (max-width: 767px)").matches) {
+            if($(".header").css("display") === "block") {
+                $(".header").css("display", "none");
+                $("body").toggleClass("menu_mobile");
+            }
         }
     })
     $(".modal__button--close").on("click", function () {
