@@ -28,11 +28,11 @@ input {
   position:relative;
 }
 .header {
-  display:none;
+  /* display:none; */
   position:fixed;
   left:0;
   right:0;
-  z-index:50;
+  z-index:100;
   padding:17px 0;
   background-color:#dc0d12;
   box-sizing:border-box;
@@ -60,7 +60,6 @@ input {
   position:absolute;
   top:10px;
   right:10px;
-  display:block;
   width:50px;
   height:50px;
   background-image:url(../images/ico_close.svg);
@@ -74,21 +73,29 @@ input {
   width:100%;
   max-width:1020px;
   margin:0 auto;
-  font-size:18px;
 }
 .nav ul {
   display:flex;
   justify-content:space-between;
   align-items:center;
+  width:100%;
+  font-size:0;
 }
 .nav ul li:hover a {
   font-weight:700;
+}
+.nav ul li {
+  /* display:inline-block; */
+  /* width:12.5%; */
+  /* text-align:center; */
+  font-size:18px;
 }
 .nav ul a {
   color:#fff;
 }
 .nav .logo {
   width:93px;
+  margin:0 auto;
 }
 .footer {
   position:relative;
@@ -125,18 +132,20 @@ input {
   margin-top:3em;
 }
 .bg-dim {
+  display:none;
   z-index:50;
   position:absolute;
   top:0;
   left:0;
   right:0;
   bottom:0;
-  background-color:rgba(0, 0, 0, .7);
+  background-color:rgba(0, 0, 0, .8);
 }
 .modal {
-  z-index:100;
+  display:none;
+  z-index:80;
   position:absolute;
-  top:100px;
+  top:500px;
   left:50%;
   width:85%;
   max-width:1346px;
@@ -227,7 +236,77 @@ input {
 .contact .right .bottom {
   padding:17px 30px;
 }
+.contact .right .top p {
+  display:inline-block;
+}
 .contact .prefix {
   font-size:16px;
   font-weight:300;
+}
+
+/* Media Query */
+/* 가로모드 모바일 디바이스 (가로 해상도가 768px 보다 작은 화면에 적용) */
+@media (max-width: 767px) {
+  body.menu_mobile {
+    overflow:hidden;
+    height:100%;
+    height:100vh;
+  }
+  .header {
+    /* display:block; */
+    display:none;
+    position:fixed;
+    width:100%;
+    /* height:100vh; */
+    padding:70px 0 30px;
+  }
+  .nav {
+    height:100%;
+    font-size:18px;
+  }
+  .nav ul {
+    justify-content:center;
+    flex-direction:column;
+    height:100%;
+  }
+  .nav li {
+    display:block;
+    width:100%;
+    padding:10px 0;
+    text-align: center;
+    box-sizing:border-box;
+  }
+  .nav a {
+    display:inline-block;
+    padding:10px 30px;
+    box-sizing:border-box;
+  }
+  .nav .m-hidden {
+    display:none;
+  }
+  .button--menu-mobile {
+    position:fixed;
+    display:block;
+    z-index:10;
+  }
+  section {
+    height:100%;
+    height:70vh;
+  }
+  .footer {
+    height:60vh;
+    background-position: bottom;
+    background-size:500%;
+  }
+  .footer span {
+    font-size:14px;
+  }
+  .footer p {
+    font-size:12px;
+  }
+
+}
+/* 세로모드 모바일 디바이스 (가로 해상도가 576px 보다 작은 화면에 적용) */
+@media (max-width: 575px) {
+
 }

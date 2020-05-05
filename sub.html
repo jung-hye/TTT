@@ -38,7 +38,7 @@
                     <li class="m-hidden">
                         <a href="">
                             <h1 class="logo">
-                                <img src="lib/images/logo_text.png" alt="TTT">
+                                <img src="lib/images/logo_text_red.png" alt="TTT">
                             </h1>
                         </a>
                     </li>
@@ -53,7 +53,7 @@
                     </li>
                 </ul>
             </nav>
-            <button class="button--close-mobile screen_out">닫기 버튼</button>
+            <button class="button--close-mobile screen_out btn--close">닫기 버튼</button>
         </header>
         <button class="button--menu-mobile screen_out">메뉴 버튼</button>
 
@@ -85,6 +85,54 @@
                         <!-- <img src="lib/images/img_section-sub-1.jpg" alt=""> -->
                     </div>
                 </div>
+                <div class="section-sub second">
+                    <div class="section-sub__txt-wrapper">
+                        <ul>
+                            <li><a href="#">범용강접</a></li>
+                            <li><a href="#">내반발성</a></li>
+                            <li><a href="#">고강접</a></li>
+                            <li><a href="#">고온점착유지</a></li>
+                            <li><a href="#">무산가</a></li>
+                            <li><a href="#">LSE</a></li>
+                            <li><a href="#">정하중</a></li>
+                            <li><a href="#">PC특화</a></li>
+                        </ul>
+                    </div>
+                    <div class="section-sub__img-wrapper">
+                    </div>
+                </div>
+                <div class="section-sub third">
+                    <div class="section-sub__txt-wrapper">
+                        <ul>
+                            <li><a href="#">범용강접</a></li>
+                            <li><a href="#">내반발성</a></li>
+                            <li><a href="#">고강접</a></li>
+                            <li><a href="#">고온점착유지</a></li>
+                            <li><a href="#">무산가</a></li>
+                            <li><a href="#">LSE</a></li>
+                            <li><a href="#">정하중</a></li>
+                            <li><a href="#">PC특화</a></li>
+                        </ul>
+                    </div>
+                    <div class="section-sub__img-wrapper">
+                    </div>
+                </div>
+                <div class="section-sub fourth">
+                    <div class="section-sub__txt-wrapper">
+                        <ul>
+                            <li><a href="#">범용강접</a></li>
+                            <li><a href="#">내반발성</a></li>
+                            <li><a href="#">고강접</a></li>
+                            <li><a href="#">고온점착유지</a></li>
+                            <li><a href="#">무산가</a></li>
+                            <li><a href="#">LSE</a></li>
+                            <li><a href="#">정하중</a></li>
+                            <li><a href="#">PC특화</a></li>
+                        </ul>
+                    </div>
+                    <div class="section-sub__img-wrapper">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="modal">
@@ -106,8 +154,8 @@
                     </div>
                     <div class="right">
                         <div class="top">
-                            <span class="prefix">Tel : </span><span>02-730-9448</span>
-                            <span class="prefix" style="padding-left:10px;">Fax : </span><span>02-730-9450</span>
+                            <p><span class="prefix">Tel : </span>02-730-9448</p>
+                            <p><span class="prefix">Fax : </span>02-730-9450</p>
                         </div>
                         <div class="bottom"><span class="prefix">E-mail : </span> tttpsa@tttkorea.com</div>
                     </div>
@@ -141,8 +189,26 @@
             </div>
         </footer>
     </div>
+<script src="lib/js/common.js"></script>
 <script>
-    
+    var modal = $(".modal");
+    var bgdim = $(".bg-dim");
+
+    $(".section-sub__txt-wrapper").find("a").on("click", function (e) {
+        e.preventDefault();
+        $("html").scrollTop(0);
+        bgdim.toggle();
+        modal.toggle();
+    })
+    bgdim.on("click", function () {
+
+        bgdim.css("display", "none");
+        modal.css("display", "none");
+    })
+    $(".modal__button--close").on("click", function () {
+        bgdim.css("display", "none");
+        modal.css("display", "none");
+    })
 </script>
 </body>
 

@@ -1,4 +1,7 @@
 /* Main */
+.header {
+  display:none;
+}
 section {
   position: relative;
   /* height:100vh; */
