@@ -148,6 +148,9 @@ section {
     display:block;
     background-image: url(../images/ico_menu_white.svg);
   }
+  .button--close-mobile {
+    display:block;
+  }
   .section-1 {
     height:100vh;
   }
