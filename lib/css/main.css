@@ -75,6 +75,7 @@ section {
   color:#fff;
   /* transform:translateX(-50%); */
 }
+
 .section-1 .logo {
   position:absolute;
   bottom:550px;
@@ -90,8 +91,15 @@ section {
   animation-duration: 5s;
 
 }
+
 .section-1 .logo img {
   width:165px;
+}
+.section-1 .animate-1 {
+  position:fixed;
+  transform:scale(1);
+  top:600px;
+  transition:all .2s linear;
 }
 .section-1 .scroll {
   position:absolute;

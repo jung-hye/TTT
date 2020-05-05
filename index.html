@@ -115,6 +115,7 @@
         </footer>
     </div>
 <script src="lib/js/skrollr.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 	// var s = skrollr.init();
 </script>
@@ -127,6 +128,68 @@
         $(".header").toggle();
         $("body").toggleClass("menu_mobile");
     });
+
+    if(matchMedia("screen and (min-width: 769px)").matches) {
+        var value = 10;
+
+        $(window).scroll(function () {
+            var scrollValue = $(window).scrollTop();
+
+            console.log(scrollValue);
+
+            function setValue(value) {
+                // $('.animate-1').animate({  opactiy: 0.8 }, {
+                //     step: function(now,fx) {
+                //         $(this).css('-webkit-transform','translateY('+ value +'px)'); 
+                //         $(this).css('-moz-transform','translateY('+ value +'px)');
+                //         $(this).css('transform','translateY('+ value +'px)');
+                //     },
+                //     duration:'500',
+                //     easing: 'swing',
+                // }, 500);
+
+                // $('.animate-1').css('transform','translateY('+ value +'px)');
+            }
+
+            // if(scrollValue >= 150 && scrollValue < 170) {
+            //     // alert(1);
+            //     setValue(30);
+            //     value += 30;
+            //     // console.log(value);
+            //     // console.log('1');
+            // }else if(scrollValue >= 170 && scrollValue < 190) {
+            //     setValue(90);
+            //     console.log('2');
+            // }else if(scrollValue >= 210 && scrollValue < 230) {
+            //     setValue(150);
+            //     console.log('3');
+            // }
+
+            // if(scrollValue >= 300) {
+            //     $(".animate-1").css("transform", "scale(.8)");
+            // }
+            if(scrollValue < 150 ) {
+                $(".animate-1").css("transform", "scale(1)");
+            }else if(scrollValue >= 150 && scrollValue < 200) {
+                $(".animate-1").css("transform", "scale(.9)");
+            }else if(scrollValue >= 200 && scrollValue < 250) {
+                $(".animate-1").css("transform", "scale(.9)");
+            }else if(scrollValue >= 250 && scrollValue < 300) {
+                $(".animate-1").css("transform", "scale(.8)");
+            }else if(scrollValue >= 300 && scrollValue < 350) {
+                $(".animate-1").css("transform", "scale(.8)");
+            }else if(scrollValue >= 350 && scrollValue < 400) {
+                $(".animate-1").css("transform", "scale(.6)");
+            }
+
+            if(scrollValue >= 490) {
+                $(".header").css("display", "block");
+            } else {
+                $(".header").css("display", "none");
+            }
+    })
+    }
+
 </script>
 </body>
 </html>
