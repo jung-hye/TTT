@@ -1,0 +1,249 @@
+/* Main */
+section {
+  position: relative;
+  /* height:100vh; */
+  height:960px;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:50% 0%;
+  text-align:center;
+}
+.section__tit-wrapper {
+  position:absolute;
+  left:50%;
+  top:30%;
+  width:100%;
+  -webkit-transform:translateX(-50%);
+  transform:translateX(-50%);
+}
+.section__tit {
+  margin:0 auto .1em;
+  font-size:60px;
+  text-align:center;
+  color:#111;
+}
+.section__tit-sub {
+  display:block;
+  margin:0 auto;
+  font-size:26px;
+  color:#111;
+  text-align:center;
+}
+.section__desc {
+  display:block;
+  font-size:34px;
+  color: #111;
+  margin:.7em auto 0;
+  text-align:center;
+}
+.section__link {
+  display:inline-block;
+  position:absolute;
+  left:50%;
+  bottom:30%;
+  margin:0 auto;
+  padding:15px 55px;
+  font-size:18px;
+  font-weight:300;
+  border:1px solid #111;
+  color: #111;
+  text-align:center;
+  -webkit-transform:translateX(-50%);
+  transform:translateX(-50%);
+}
+
+.section-1 {
+  height:1190px;
+  /* display:flex; */
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background-color:grey;
+  background-image: url(../images/bg_main.jpg);
+
+}
+.section-1 .section__tit {
+  position:relative;
+  top:40%;
+  /* left:50%; */
+  margin:0 auto;
+  font-size:100px;
+  font-weight:300;
+  color:#fff;
+  /* transform:translateX(-50%); */
+}
+.section-1 .logo {
+  position:absolute;
+  bottom:40%;
+  /* left:50%; */
+  width:100%;
+  /* max-width:165px; */
+  /* margin-top:50px; */
+  /* transform:translateX(-50%); */
+  transform-origin:center;
+  text-align:center;
+
+  animation-name: test;
+  animation-duration: 5s;
+
+}
+.section-1 .logo img {
+  width:165px;
+}
+.section-1 .scroll {
+  position:absolute;
+  left:50%;
+  bottom:100px;
+  transform:translateX(-50%);
+}
+.section-1 .scroll img {
+  width:100%;
+}
+.section-2 {
+  background-color:lemonchiffon;
+  background-image: url(../images/bg_section-2.jpg);
+}
+.section-3 {
+  background-color:burlywood;
+  background-image: url(../images/bg_section-3.jpg);
+}
+.section-4 {
+  background-color:burlywood;
+  background-image: url(../images/bg_section-4.jpg);
+}
+.section-5 {
+  background-color:burlywood;
+  background-image: url(../images/bg_section-5.jpg);
+}
+.section-6 {
+  background-color:burlywood;
+  background-image: url(../images/bg_section-6.jpg);
+}
+.section-1 *, .section-2 * {
+  color:#fff;
+  border-color:#fff;
+}
+
+/* animation */
+@keyframes test {
+  0% {
+    bottom:40%;
+  }
+  50% {
+    /* transform: scale(0.8); */
+  }
+  100% {
+    transform: scale(0.5);
+    bottom:0%;
+  }
+}
+@keyframes scrollAni {
+  0% {
+    bottom:40%;
+  }
+  50% {
+    /* transform: scale(0.8); */
+  }
+  100% {
+    transform: scale(0.5);
+    bottom:0%;
+  }
+}
+
+/* Media Query */
+/* 가로모드 모바일 디바이스 (가로 해상도가 768px 보다 작은 화면에 적용) */
+@media (max-width: 767px) {
+  body.menu_mobile {
+    overflow:hidden;
+    height:100%;
+    height:100vh;
+  }
+  .header {
+    /* display:block; */
+    position:fixed;
+    width:100%;
+    /* height:100vh; */
+    padding:70px 0 30px;
+  }
+  .nav {
+    height:100%;
+    font-size:18px;
+  }
+  .nav ul {
+    justify-content:center;
+    flex-direction:column;
+    height:100%;
+  }
+  .nav li {
+    display:block;
+    width:100%;
+    padding:10px 0;
+    text-align: center;
+    box-sizing:border-box;
+  }
+  .nav a {
+    display:inline-block;
+    padding:10px 30px;
+    box-sizing:border-box;
+  }
+  .nav .m-hidden {
+    display:none;
+  }
+  .button--menu-mobile {
+    display:block;
+    z-index:10;
+  }
+  section {
+    height:100%;
+    height:70vh;
+  }
+  .footer {
+    height:60vh;
+    background-position: bottom;
+    background-size:500%;
+  }
+  .footer span {
+    font-size:14px;
+  }
+  .footer p {
+    font-size:12px;
+  }
+  .section__tit {
+    font-size:30px;
+  }
+  .section__tit-sub {
+    font-size:18px;
+  }
+  .section__desc {
+    font-size:20px;
+  }
+  .section__link {
+    width:210px;
+    padding:10px;
+    font-size:14px;
+    box-sizing:border-box;
+  }
+  .section-1 {
+    height:100%;
+    height:100vh;
+  }
+  .section-1 .logo {
+    bottom:30%;
+  }
+  .section-1 .logo img {
+    width:80px;
+  }
+  .section-1 .scroll {
+    bottom:30px;
+    width:50px;
+  }
+  .section-1 .section__tit {
+    top:30%;
+    font-size:50px;
+    line-height:1.2;
+  }
+}
+/* 세로모드 모바일 디바이스 (가로 해상도가 576px 보다 작은 화면에 적용) */
+@media (max-width: 575px) {
+
+}

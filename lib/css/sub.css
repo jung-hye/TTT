@@ -1,0 +1,113 @@
+.sub {
+
+}
+section {
+  position: relative;
+}
+.section-1 {
+  height:940px;
+  background-image: url(../images/bg_sub-section-1.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:50% 0%;
+  text-align:center;
+}
+.section-1 .section__tit {
+  position:relative;
+  margin:0 auto .1em;
+  padding-top:300px;
+  font-size:40px;
+  font-weight:300;
+  text-align:center;
+  color:#fff;
+}
+.section-1 .section__tit strong {
+  font-weight:700;
+}
+.section-1 .section__desc {
+  position:relative;
+  display:block;
+  margin:40px auto 0;
+  font-size:24px;
+  font-weight:300;
+  color: #fff;
+  text-align:center;
+}
+.section-1 .section__desc:after {
+  content:'';
+  display:block;
+  position:absolute;
+  bottom:-80px;
+  left:50%;
+  height:70px;
+  margin-left:-5px;
+  border-left:1px solid #fff;
+}
+.sub-container {
+  position:relative;
+  z-index:1;
+  margin-top:-150px;
+  padding-bottom:50px;
+}
+.section-sub {
+  overflow:hidden;
+  width:85%;
+  max-width:1346px;
+  height:310px;
+  margin:0 auto;
+  background-color:#fff;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  -webkit-box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.05);
+  box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.05);
+}
+.section-sub:hover {
+  background-color:#e5f3f7;
+}
+.section-sub * {
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+.section-sub__txt-wrapper {
+  float:left;
+  width:68%;
+  padding:65px 90px;
+  font-size:22px;
+  height:100%;
+}
+.section-sub__txt-wrapper ul {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  height:100%;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  font-size:0;
+}
+.section-sub__txt-wrapper li {
+  /* display:inline-block; */
+  /* width:33%; */
+  flex-basis:33%;
+  /* margin-bottom:30px; */
+  box-sizing: border-box;
+  font-size:22px;
+  line-height:30px;
+}
+.section-sub__txt-wrapper li:hover {
+  font-weight:700;
+}
+.section-sub__img-wrapper {
+  float:right;
+  width:32%;
+  height:100%;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+.section-sub__img-wrapper img {
+  width:100%;
+}
+.first .section-sub__img-wrapper {
+  background-image: url(../images/img_section-sub-1.jpg);
+}
