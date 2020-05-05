@@ -21,6 +21,7 @@ input {
   z-index:50;
   padding:17px 0;
   background-color:#dc0d12;
+  box-sizing:border-box;
 }
 .logo img {
   width:100%;
@@ -35,6 +36,20 @@ input {
   width:50px;
   height:50px;
   background-image:url(../images/ico_menu.svg);
+  background-size:60%;
+  background-position:center;
+  background-repeat:no-repeat;
+  text-indent:-1000px;
+}
+.button--close-mobile {
+  display:none;
+  position:absolute;
+  top:10px;
+  right:10px;
+  display:block;
+  width:50px;
+  height:50px;
+  background-image:url(../images/ico_close.svg);
   background-size:60%;
   background-position:center;
   background-repeat:no-repeat;
@@ -251,27 +266,30 @@ section {
 /* 가로모드 모바일 디바이스 (가로 해상도가 768px 보다 작은 화면에 적용) */
 @media (max-width: 767px) {
   .header {
-    display:block;
-    position:relative;
+    /* display:block; */
+    position:fixed;
     width:100%;
-    /* height:50vh; */
+    height:100vh;
   }
   .nav {
+    height:100%;
     font-size:16px;
   }
   .nav ul {
-    display:block;
+    justify-content:center;
+    flex-direction:column;
+    height:100%;
   }
   .nav li {
     display:block;
     width:100%;
-    padding:10px 0;
+    padding:15px 0;
     text-align: center;
     box-sizing:border-box;
   }
   .nav a {
     display:inline-block;
-    padding:10px 20px;
+    padding:10px 30px;
     box-sizing:border-box;
   }
   .nav .m-hidden {
