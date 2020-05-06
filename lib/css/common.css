@@ -27,6 +27,7 @@ input {
 
 /* layout */
 .wrapper {
+  overflow:hidden;
   position:relative;
 }
 .header {

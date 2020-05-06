@@ -145,101 +145,103 @@
 
     function work () {
         if(matchMedia("screen and (min-width: 769px)").matches) {
-        var value = 10;
+            var value = 10;
 
-        $(window).scroll(function () {
-            var scrollValue = $(window).scrollTop();
+            $(window).scroll(function () {
+                var scrollValue = $(window).scrollTop();
 
-            // console.log(scrollValue);
+                // console.log(scrollValue);
 
-            function animateScale(value) {
-                if(scrollValue < 150 ) {
-                    $(".animate-1").css("transform", "scale(1)");
-                    $(".animate-1").css("opacity", "1");
-                    $(".m-hidden").find('img').css("opacity", "0");
-                    $(".section__tit-2").css("opacity", "0");
+                function animateScale(value) {
+                    if(scrollValue < 150 ) {
+                        $(".animate-1").css("transform", "scale(1)");
+                        $(".animate-1").css("opacity", "1");
+                        $(".m-hidden").find('img').css("opacity", "0");
+                        $(".section__tit-2").css("opacity", "0");
 
-                } else if(scrollValue >= 150 && scrollValue < 200) {
-                    $(".animate-1").css("transform", "scale(.9)");
-                    $(".animate-1").css("opacity", "1");
-                    $(".section__tit-2").css("opacity", "0");
+                    } else if(scrollValue >= 150 && scrollValue < 200) {
+                        $(".animate-1").css("transform", "scale(.9)");
+                        $(".animate-1").css("opacity", "1");
+                        $(".section__tit-2").css("opacity", "0");
 
-                } else if(scrollValue >= 200 && scrollValue < 250) {
-                    $(".animate-1").css("transform", "scale(.8)");
-                    $(".animate-1").css("opacity", "1");
-                    $(".section__tit-2").css("opacity", "0");
+                    } else if(scrollValue >= 200 && scrollValue < 250) {
+                        $(".animate-1").css("transform", "scale(.8)");
+                        $(".animate-1").css("opacity", "1");
+                        $(".section__tit-2").css("opacity", "0");
 
-                } else if(scrollValue >= 250 && scrollValue < 300) {
-                    $(".animate-1").css("transform", "scale(.7)");
-                    $(".animate-1").css("opacity", "1");
-                    $(".section__tit-2").css("opacity", "0");
+                    } else if(scrollValue >= 250 && scrollValue < 300) {
+                        $(".animate-1").css("transform", "scale(.7)");
+                        $(".animate-1").css("opacity", "1");
+                        $(".section__tit-2").css("opacity", "0");
 
-                } else if(scrollValue >= 300 && scrollValue < 350) {
-                    $(".animate-1").css("transform", "scale(.65)");
-                    $(".animate-1").css("opacity", "1");
-                    $(".section-1").find(".section__tit").css("opacity", "1");
-                    $(".section__tit-2").css("opacity", "0");
+                    } else if(scrollValue >= 300 && scrollValue < 350) {
+                        $(".animate-1").css("transform", "scale(.65)");
+                        $(".animate-1").css("opacity", "1");
+                        $(".section-1").find(".section__tit").css("opacity", "1");
+                        $(".section__tit-2").css("opacity", "0");
 
-                } else if(scrollValue >= 350 && scrollValue < 400) {
-                    $(".animate-1").css("transform", "scale(.6)");
-                    $(".animate-1").css("opacity", "1");
-                    $(".section__tit-2").css("opacity", "0");
-                    $(".section-1").find(".section__tit").css("opacity", "1");
+                    } else if(scrollValue >= 350 && scrollValue < 400) {
+                        $(".animate-1").css("transform", "scale(.6)");
+                        $(".animate-1").css("opacity", "1");
+                        $(".section__tit-2").css("opacity", "0");
+                        $(".section-1").find(".section__tit").css("opacity", "1");
 
-                } else if(scrollValue >= 400 && scrollValue < 535) {
-                    $(".section-1").find(".section__tit").css("opacity", "0");
-                    $(".section__tit-2").css("opacity", "1");   
-                    $(".animate-1").css("transform", "scale(.55)");
-                    $(".animate-1").css("opacity", "1");
-                    // nav 로고 안보이게
-                    $(".m-hidden").find('img').css("opacity", "0");
-                    // header 안보이게
-                    setTimeout(() => {
-                        $(".header").css("display", "none");
-                    }, 50);
-                } else if(scrollValue >= 535) {
-                    // main 로고 안보이게
-                    $(".animate-1").css("opacity", "0");
-                    // header 안보이게
-                    $(".header").css("display", "block");
-                    var headerOffset = $('.header')[0].getBoundingClientRect().top;
-                    // console.log(headerOffset);
-                    if(headerOffset <= 0) {
-                        $(".header").addClass('fixed');
-                        if(scrollValue < 1120) {
-                            $(".header").removeClass('fixed');
+                    } else if(scrollValue >= 400 && scrollValue < 535) {
+                        $(".section-1").find(".section__tit").css("opacity", "0");
+                        $(".section__tit-2").css("opacity", "1");   
+                        $(".animate-1").css("transform", "scale(.55)");
+                        $(".animate-1").css("opacity", "1");
+                        // nav 로고 안보이게
+                        $(".m-hidden").find('img').css("opacity", "0");
+                        // header 안보이게
+                        setTimeout(() => {
+                            $(".header").css("display", "none");
+                        }, 50);
+                    } else if(scrollValue >= 535) {
+                        // main 로고 안보이게
+                        $(".animate-1").css("opacity", "0");
+                        // header 안보이게
+                        $(".header").css("display", "block");
+                        var headerOffset = $('.header')[0].getBoundingClientRect().top;
+                        // console.log(headerOffset);
+                        if(headerOffset <= 0) {
+                            $(".header").addClass('fixed');
+                            if(scrollValue < 1120) {
+                                $(".header").removeClass('fixed');
+                            }
                         }
+                        // nav 로고 보이게
+                        $(".m-hidden").find('img').css("opacity", "1");
                     }
-                    // nav 로고 보이게
-                    $(".m-hidden").find('img').css("opacity", "1");
                 }
-            }
-            function headerToggle() {
-                if(scrollValue >= 530) {
-                    // $(".header").css("display", "block");
-                    // var headerOffset = $('.header')[0].getBoundingClientRect().top;
-                    // if(headerOffset <= 0) {
-                    //     $(".header").addClass('fixed');
-                    // }else {
-                    //     $(".header").removeClass('fixed');
-                    // }
-                } else {
-                    $(".m-hidden").find('img').css("opacity", "1");
-                    setTimeout(() => {
-                        $(".header").css("display", "none");
-                    }, 50);
+                function headerToggle() {
+                    if(scrollValue >= 530) {
+                        // $(".header").css("display", "block");
+                        // var headerOffset = $('.header')[0].getBoundingClientRect().top;
+                        // if(headerOffset <= 0) {
+                        //     $(".header").addClass('fixed');
+                        // }else {
+                        //     $(".header").removeClass('fixed');
+                        // }
+                    } else {
+                        $(".m-hidden").find('img').css("opacity", "1");
+                        setTimeout(() => {
+                            $(".header").css("display", "none");
+                        }, 50);
+                    }
+
+
                 }
 
-
-            }
-
-            animateScale();
-            // headerToggle();
-        });
+                animateScale();
+                // headerToggle();
+            });
+        }else {
+            return
         }
     }
 work();
-$(window).on("resize", work)
+$(window).on("resize", work);
 </script>
 </body>
 </html>
