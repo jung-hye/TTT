@@ -163,7 +163,7 @@ section {
     max-width:80%;
     padding-top:150px;
     font-size:30px;
-    font-size: 9.5vw;
+    font-size: 9vw;
   }
   .section-sub {
     height:auto;
@@ -174,7 +174,7 @@ section {
     padding:20px 20px;
   }
   .section-sub__txt-wrapper li {
-    font-size:14px;
+    font-size:15px;
     text-align:center;
   }
   .section-sub__txt-wrapper a {
