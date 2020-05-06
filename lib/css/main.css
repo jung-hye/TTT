@@ -18,7 +18,7 @@
 section {
   position: relative;
   /* height:100vh; */
-  height:960px;
+  height:830px;
   background-size:cover;
   background-repeat:no-repeat;
   background-position:50% 0%;
@@ -94,11 +94,10 @@ section {
   position:absolute;
   width:100%;
   text-align:center;
-  /* top:400px; */
-  bottom:420px;
+  bottom:250px;
   left:0;
   right:0;
-  font-size:100px;
+  font-size:80px;
   font-weight:300;
   opacity:0;
   transition:all .7s ease;
