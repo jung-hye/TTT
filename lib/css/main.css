@@ -87,20 +87,21 @@ section {
   font-weight:300;
   color:#fff;
   /* transform:translateX(-50%); */
+  opacity:1;
 }
 .section-1 .section__tit-2 {
   display:block;
   position:absolute;
   width:100%;
   text-align:center;
-  bottom:320px;
+  /* top:400px; */
+  bottom:420px;
   left:0;
   right:0;
-  font-size:30px;
+  font-size:100px;
   font-weight:300;
   opacity:0;
-  transition:all 1s ease;
-  letter-spacing:10px;
+  transition:all .7s ease;
 }
 .section-1 .logo {
   position:absolute;

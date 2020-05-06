@@ -206,6 +206,7 @@ setTimeout(scrollTo,0,0,1);
         if(modal.css("display") === "block") {
             modal.css("display", "none")
         }
+        // 모바일의 경우 메뉴 열림 아래의 bg-dim 터치 시 메뉴 닫기
         if(matchMedia("screen and (max-width: 767px)").matches) {
             if($(".header").css("display") === "block") {
                 $(".header").css("display", "none");
