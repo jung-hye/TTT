@@ -148,9 +148,11 @@
             $(window).scroll(function () {
                 var scrollValue = $(window).scrollTop();
 
-                // console.log(scrollValue);
+                console.log(scrollValue);
 
                 function animateScale(value) {
+                    $(".animate-1").css("opacity", "1");
+
                     if(scrollValue < 150 ) {
                         $(".animate-1").css("transform", "scale(1)");
                         $(".animate-1").css("opacity", "1");
