@@ -20,7 +20,7 @@
     <div id="" class="wrapper main">
         <div class="bg-dim"></div>
 
-        <header class="header">
+        <header class="header" data-0="display:none;" data-550="display:block;"  data-smooth-scrolling="off" >
             <nav class="nav">
                 <ul>
                     <li>
@@ -35,7 +35,7 @@
                     <li class="menu-logo">
                         <a href="index.html">
                             <h1 class="logo">
-                                <img src="lib/images/logo_text.png" alt="TTT" style="opacity: 0;">
+                                <img src="lib/images/logo_text.png" alt="TTT" data-0="opacity:1" data-550="opacity:1">
                             </h1>
                         </a>
                     </li>
@@ -57,8 +57,8 @@
         <div class="container">
             <section id="section1" class="section-1">
                 <h2 class="section__tit">Think Top Technology</h2>
-                <span class="section__tit-2">Your Inspiration</span>
-                <div class="logo main-logo" data-smooth-scrolling="on">
+                <span class="section__tit-2" data-0="opacity:0" data-300="opacity:0" data-540="opacity:1;" data-smooth-scrolling="off">Your Inspiration</span>
+                <div class="logo main-logo" data-smooth-scrolling="on" data-0="transform:scale(1); opacity:1" data-540="transform:scale(.5); opacity:1;" data-550="opacity:0" >
                     <img src="lib/images/logo_text.png" alt="TTT">
                 </div>
                 <div class="scroll animate-2" data-smooth-scrolling="on">
@@ -117,7 +117,48 @@
     </div>
 <!-- <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous" type="text/javascript"></script> -->
 <script src="lib/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="lib/js/skrollr.min.js"></script>
+<!--[if lt IE 9]>
+    <script type="text/javascript" src="lib/js/skrollr.ie.min.js"></script>
+<![endif]-->
 <script src="lib/js/common.js"></script>
+<script>
+function desktopScrollAnimation() {
+    function setValue() {
+        // if(matchMedia("screen and (min-width: 769px)").matches) {
+        if(document.body.clientWidth > 768) {
+
+            var s = skrollr.init({
+                smoothScrolling: true,
+                smoothScrollingDuration: 200,
+            });
+
+            $('html, body').bind('DOMMouseScroll MouseScrollEvent MozMousePixelScroll wheel scroll', function () {
+                var scrollValue = $(window).scrollTop();
+                
+                if(scrollValue >= 450) {
+                    // console.log(scrollValue);
+                    // 헤더 뷰포트 최상단 위치 시 fixed 클래스 부여
+                    var headerOffset = $('.header')[0].getBoundingClientRect().top;
+                    console.log(headerOffset);
+                    if(headerOffset <= 0) {
+                        $(".header").addClass('fixed');
+                        if(scrollValue < 1120) {
+                            $(".header").removeClass('fixed');
+                        }
+                    }
+                }
+            });
+        }else {
+            return
+        }
+    }
+
+    setValue()
+}
+desktopScrollAnimation();
+
+</script>
 <script type="text/javascript">
 
 
@@ -131,12 +172,14 @@ $(".bg-dim").on("click", function () {
     }
 })
 
+
+
 function parallaxScrolling () {
     var viewportWidth;
 
     setTimeout(function(){
         viewportWidth = $(window).width();
-        alert(viewportWidth);
+        // alert(viewportWidth);
         animate();
     }, 500)
     
@@ -144,7 +187,7 @@ function parallaxScrolling () {
     function animate() {
         // if(matchMedia("screen and (min-width: 769px)").matches) {
         if(viewportWidth > 769) {
-            alert("desktop");
+            // alert("desktop");
             function scrollSetting() {
                 if(scrollValue < 150 ) {
                     // 메인 로고 크기 1
@@ -242,13 +285,14 @@ function parallaxScrolling () {
         }
     }
 
+
 }
-parallaxScrolling();
+// parallaxScrolling();
 
 // 윈도우 리사이즈 시 패럴랙스 재실행
 // $(window).on("resize", parallaxScrolling);
 // 윈도우 리사이즈 시 모바일 용으로 메뉴 초기화
-$(window).on("resize", parallaxScrolling );
+$(window).on("resize", desktopScrollAnimation);
 </script>
 
 
