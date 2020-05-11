@@ -8,7 +8,7 @@
   position:fixed;
   top:0;
 }
-.m-hidden img {
+.menu-logo img {
   opacity:0;
   /* transition:opacity .1s ease; */
 }
@@ -119,7 +119,7 @@ section {
 .section-1 .logo img {
   width:165px;
 }
-.section-1 .animate-1 {
+.section-1 .logo {
   position:fixed;
   z-index:100;
   top:600px;
@@ -194,7 +194,7 @@ section {
     /* height:100vh; */
     padding:70px 0 30px;
   }
-  .animate-1 {
+  .logo {
     position:absolute;
   }
   .nav {
@@ -219,7 +219,7 @@ section {
     padding:10px 30px;
     box-sizing:border-box;
   }
-  .nav .m-hidden {
+  .nav .menu-logo {
     display:none;
   }
   .button--close-mobile {

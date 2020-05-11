@@ -293,7 +293,7 @@ input {
     padding:10px 30px;
     box-sizing:border-box;
   }
-  .nav .m-hidden {
+  .nav .menu-logo {
     display:none;
   }
   .button--menu-mobile {
