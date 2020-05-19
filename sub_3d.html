@@ -19,20 +19,20 @@
 </head>
 
 <body>
-    <div id="" class="wrapper sub">
+    <div id="" class="wrapper sub sub_3d">
         <div class="bg-dim"></div>
 
         <header class="header">
             <nav class="nav">
                 <ul>
                     <li>
-                        <a href="#">유성</a>
+                        <a href="sub_oil.html">유성</a>
                     </li>
                     <li>
-                        <a href="#">수성</a>
+                        <a href="sub_water.html">수성</a>
                     </li>
                     <li>
-                        <a href="#">UV</a>
+                        <a href="sub_uv.html">UV</a>
                     </li>
                     <li class="m-hidden">
                         <a href="index.html">
@@ -42,12 +42,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">우레탄</a>
+                        <a href="sub_urethan.html">우레탄</a>
+                    </li>
+                    <li class="active">
+                        <a href="sub_3d.html">3D Printing</a>
                     </li>
                     <li>
-                        <a href="#">3D Printing</a>
-                    </li>
-                    <li>
+                        <!-- <a href="sub_about.html">About TTT</a> -->
                         <a href="#">About TTT</a>
                     </li>
                 </ul>
@@ -58,73 +59,31 @@
 
         <div class="container">
             <section class="section-1">
-                <h2 class="section__tit">시장의 다양한 NEEDS를 충족하는<br>
-                    <strong>높은 기술력의 제품</strong>을 보유하고 있습니다.</h2>
+                <h2 class="section__tit">
+                  TTT에서는 SLA 방식의 UV 경화형 3D 프린트 관련 재료를  연구하여<br>국산화에 앞장서고 있습니다.<br>
+                    <strong>사용자 맞춤형 3D 프린트 솔루션의</strong> 제공을 약속드립니다.
+                </h2>
                 <span class="section__desc">Think Top Technology</span>
             </section>
             <div class="sub-container">
-                <div class="section-sub first">
-                    <div class="section-sub__txt-wrapper">
+                <div class="section-sub first" style="height:360px">
+                    <div class="section-sub__txt-wrapper has-desc">
                         <ul>
-                            <li><a href="#">라벨</a></li>
-                            <li><a href="#">윈도우필름</a></li>
-                            <li><a href="#">배면</a></li>
-                            <li><a href="#">Foam</a></li>
-                            <li><a href="#">동박/AL</a></li>
-                            <li><a href="#">차광</a></li>
-                            <li><a href="#">부직</a></li>
-                            <li><a href="#">도전</a></li>
-                            <li><a href="#">베젤리스폼</a></li>
-                            <li><a href="#">저가</a></li>
-                            <li><a href="#">박막강접</a></li>
-                            <li><a href="#">모바일 비산방지</a></li>
+                            <li>
+                                <a href="#">
+                                  4차 산업혁명을 이끄는 3D프린터
+                                  <p>
+                                    - 소재를 층층이 쌓아올려서 제품을 제작하는 기술<br>
+                                    - 다품종 소량 생산, 맞춤형 부품 생산, 최적화 설계, 디지털 제조등 산업에서의 제조 방식의 새로운 흐름<br>
+                                    - 제조 공정의 간소화 및 시장의 변화에 맞춘 빠른 제품화 가능
+                                  </p>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="section-sub__img-wrapper">
+                        <!-- 이미지 삽입 필요 -->
                         <!-- <img src="lib/images/img_section-sub-1.jpg" alt=""> -->
-                    </div>
-                </div>
-                <div class="section-sub second">
-                    <div class="section-sub__txt-wrapper">
-                        <ul>
-                            <li><a href="#">범용강접</a></li>
-                            <li><a href="#">내반발성</a></li>
-                            <li><a href="#">고강접</a></li>
-                            <li><a href="#">고온점착유지</a></li>
-                            <li><a href="#">무산가</a></li>
-                            <li><a href="#">LSE</a></li>
-                            <li><a href="#">정하중</a></li>
-                            <li><a href="#">PC특화</a></li>
-                        </ul>
-                    </div>
-                    <div class="section-sub__img-wrapper">
-                    </div>
-                </div>
-                <div class="section-sub third">
-                    <div class="section-sub__txt-wrapper">
-                        <ul>
-                            <li><a href="#">미점착</a></li>
-                            <li><a href="#">대전방지용</a></li>
-                            <li><a href="#">고내열</a></li>
-                            <li><a href="#">PE보호용</a></li>
-                            <li><a href="#">강판용</a></li>
-                        </ul>
-                    </div>
-                    <div class="section-sub__img-wrapper">
-                    </div>
-                </div>
-                <div class="section-sub fourth">
-                    <div class="section-sub__txt-wrapper">
-                        <ul>
-                            <li><a href="#">수해리</a></li>
-                            <li><a href="#">COOL OFF</a></li>
-                            <li><a href="#">TVOC Free</a></li>
-                            <li><a href="#">모바일 비산방지</a></li>
-                            <li><a href="#">WARM OFF(HR)</a></li>
-                            <li><a href="#">WARM UP</a></li>
-                        </ul>
-                    </div>
-                    <div class="section-sub__img-wrapper">
                     </div>
                 </div>
             </div>
@@ -183,40 +142,12 @@
             </div>
         </footer>
     </div>
-<script>
-window.addEventListener('load',function(){
-setTimeout(scrollTo,0,0,1);
-},false);
-</script>
-<script src="lib/js/common.js"></script>
-<script>
-    var modal = $(".modal");
-    var bgdim = $(".bg-dim");
-
-    $(".section-sub__txt-wrapper").find("a").on("click", function (e) {
-        e.preventDefault();
-        $("html").scrollTop(0);
-        bgdim.toggle();
-        modal.toggle();
-    })
-    bgdim.on("click", function () {
-        bgdim.css("display", "none");
-        if(modal.css("display") === "block") {
-            modal.css("display", "none")
-        }
-        // 모바일의 경우 메뉴 열림 아래의 bg-dim 터치 시 메뉴 닫기
-        if(matchMedia("screen and (max-width: 767px)").matches) {
-            if($(".header").css("display") === "block") {
-                $(".header").css("display", "none");
-                $("body").toggleClass("menu_mobile");
-            }
-        }
-    })
-    $(".modal__button--close").on("click", function () {
-        bgdim.css("display", "none");
-        modal.css("display", "none");
-    })
-</script>
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(scrollTo, 0, 0, 1);
+        }, false);
+    </script>
+    <script src="lib/js/common.js"></script>
 </body>
 
 </html>

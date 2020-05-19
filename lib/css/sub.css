@@ -1,3 +1,4 @@
+/* common */
 .sub {
 
 }
@@ -64,8 +65,8 @@ section {
 .section-sub {
   overflow:hidden;
   width:85%;
-  max-width:1346px;
   height:310px;
+  max-width:1346px;
   margin:0 auto 50px;
   background-color:#fff;
   -webkit-box-sizing:border-box;
@@ -92,24 +93,37 @@ section {
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
+  align-items:center;
   height:100%;
   -webkit-box-sizing:border-box;
   box-sizing:border-box;
   font-size:0;
 }
 .section-sub__txt-wrapper li {
-  /* display:inline-block; */
-  /* width:33%; */
-  flex-basis:33%;
-  /* margin-bottom:30px; */
   box-sizing: border-box;
   font-size:22px;
   line-height:30px;
 }
-.section-sub__txt-wrapper li:hover {
+.section-sub__txt-wrapper.has-3-columns li {
+  flex-basis:33%;
+}
+.section-sub__txt-wrapper.has-2-columns li {
+  flex-basis:50%;
+}
+.section-sub__txt-wrapper.has-desc li {
+  flex-basis:100%;
+}
+.section-sub__txt-wrapper li:hover a {
   font-weight:700;
 }
+.section-sub__txt-wrapper li p {
+  margin-top:20px;
+  font-size:20px;
+  font-weight:300;
+  line-height:1.5;
+}
 .section-sub__img-wrapper {
+  overflow:hidden;
   float:right;
   width:32%;
   height:100%;
@@ -121,17 +135,78 @@ section {
   width:100%;
 }
 .first .section-sub__img-wrapper {
-  background-image: url(../images/img_section-sub-1.jpg);
+  /* background-image: url(../images/img_section-sub-1.jpg); */
+  background-color:#ededed;
 }
 .second .section-sub__img-wrapper {
-  background-image: url(../images/img_section-sub-2.jpg);
+  /* background-image: url(../images/img_section-sub-2.jpg); */
+  background-color:#ededed;
 }
 .third .section-sub__img-wrapper {
-  background-image: url(../images/img_section-sub-3.jpg);
+  /* background-image: url(../images/img_section-sub-3.jpg); */
+  background-color:#ededed;
 }
 .fourth .section-sub__img-wrapper {
-  background-image: url(../images/img_section-sub-4.jpg);
+  /* background-image: url(../images/img_section-sub-4.jpg); */
+  background-color:#ededed;
 }
+
+
+
+/* sub_oil */
+.sub_oil .section-1 {
+  background-image: url(../images/bg_sub-water-section-1.jpg);
+}
+.sub_oil .section-sub:hover {
+  background-color:#e5f3f7;
+}
+
+/* sub_water */
+.sub_water .section-1 {
+  background-image: url(../images/bg_sub-water-section-1.jpg);
+}
+.sub_oil .section-sub:hover {
+  background-color:#e5f3f7;
+}
+
+/* sub_uv */
+.sub_uv .section-1 {
+  background-image: url(../images/bg_sub-uv-section-1.jpg);
+}
+.sub_uv .section-sub:hover {
+  background-color:#f5ebf9;
+}
+
+/* sub_urethan */
+.sub_urethan .section-1 {
+  background-image: url(../images/bg_sub-urethan-section-1.jpg);
+}
+.sub_urethan .section-sub:hover {
+  background-color:#f7f4e1;
+}
+.sub_urethan .section__tit,
+.sub_urethan .section__desc {
+  color:#333;
+}
+.sub_urethan .section__desc:after {
+  border-color:#333;
+}
+
+/* sub_3d */
+.sub_3d .section-1 {
+  background-image: url(../images/bg_sub-3d-section-1.jpg);
+}
+.sub_3d .section-sub:hover {
+  background-color:#f1f1f1;
+}
+.sub_3d .section__tit,
+.sub_3d .section__desc {
+  color:#333;
+}
+.sub_3d .section__desc:after {
+  border-color:#333;
+}
+
 
 /* Media Query */
 @media (max-width: 1024px) {
@@ -180,6 +255,9 @@ section {
   .section-sub__txt-wrapper a {
     padding:7px 0;
   }
+  .section-sub__txt-wrapper li p {
+    font-size:14px;
+  }
   .section-sub__img-wrapper {
     float:none;
     width:100%;
@@ -215,7 +293,7 @@ section {
   }
 
 
-}
+
 /* 세로모드 모바일 디바이스 (가로 해상도가 576px 보다 작은 화면에 적용) */
 @media (max-width: 575px) {
 

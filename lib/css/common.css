@@ -85,6 +85,7 @@ input {
   width:100%;
   font-size:0;
 }
+.nav ul li.active a,
 .nav ul li:hover a {
   font-weight:700;
 }
