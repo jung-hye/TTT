@@ -25,6 +25,26 @@ input {
   background-repeat:no-repeat;
   cursor: pointer;
 }
+table {
+  width:100%;
+  margin-top:50px;
+  table-layout:fixed;
+  text-align:center;
+  font-size:18px;
+  border-top: 1px solid #E4E4E4;
+  border-bottom: 1px solid #E4E4E4;
+}
+thead {
+}
+thead th {
+  font-weight:500;
+  background-color:#f7f7f7;
+  border-bottom: 1px solid #ccc;
+}
+th, td {
+  padding:10px 10px;
+  border-bottom: 0.5px solid #EAEAEA;
+}
 
 /* layout */
 .wrapper {
@@ -166,6 +186,9 @@ input {
 .modal__inner {
 
 }
+.modal__item {
+  display:none;
+}
 .modal__txt-wrapper {
   position:relative;
 }
@@ -198,8 +221,10 @@ input {
   margin-top:150px;
 }
 .modal__img-wrapper img {
-  width:100%;
-  vertical-align:top;
+  display:block;
+  width:auto;
+  max-width:100%;
+  margin:0 auto 30px;
 }
 .modal__button--close {
   position:absolute;
