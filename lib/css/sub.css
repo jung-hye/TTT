@@ -263,34 +263,6 @@ section {
     width:100%;
     padding-top:50%;
   }
-  .modal {
-    top:100px;
-    padding:20px;
-  }
-  .modal__tit {
-    margin-bottom:5px;
-    font-size:30px;
-  }
-  .modal__tit-sub {
-    font-size:14px;
-  }
-  .modal__desc {
-    margin-top:20px;
-    padding-top:30px;
-    font-size:16px;
-  }
-  .modal__txt-sub {
-    display:none;
-  }
-  .modal__button--close {
-    top:20px;
-    right:20px;
-    width:30px;
-    height:30px;
-  }
-  .modal__img-wrapper {
-    margin-top:50px;
-  }
 
 
 

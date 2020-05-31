@@ -187,10 +187,10 @@ th, td {
 .modal__inner {
 }
 .modal__arrow {
-  position:absolute;
-  top:40%;
-  left:30px;
-  right:30px;
+  position:fixed;
+  top:40vh;
+  left:-5%;
+  right:-5%;
 }
 .modal__btn {
   position:absolute;
@@ -304,6 +304,44 @@ th, td {
 @media (max-width: 767px) {
   table {
     font-size:16px;
+  }
+  .modal {
+    width:80%;
+    top:100px;
+    padding:20px;
+  }
+  .modal__tit {
+    margin-bottom:5px;
+    font-size:30px;
+  }
+  .modal__tit-sub {
+    font-size:14px;
+  }
+  .modal__desc {
+    margin-top:20px;
+    padding-top:30px;
+    font-size:15px;
+  }
+  .modal__txt-sub {
+    display:none;
+  }
+  .modal__button--close {
+    top:20px;
+    right:20px;
+    width:30px;
+    height:30px;
+  }
+  .modal__img-wrapper {
+    margin-top:50px;
+  }
+  .modal__btn {
+    width:25px;
+  }
+  .modal__arrow {
+    position:absolute;
+    top:40vh;
+    left:-10%;
+    right:-10%;
   }
   body.menu_mobile {
     overflow:hidden;
