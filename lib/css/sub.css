@@ -207,6 +207,44 @@ section {
   border-color:#333;
 }
 
+/* sub_about */
+.sub_about .section-1 {
+  height:auto;
+  background:none;
+}
+.sub_about .section-1 .section__tit {
+  margin-bottom:130px;
+  color:#333;
+}
+.sub_about .section-1 .section__desc {
+  max-width:900px;
+  margin:0 auto 70px;
+  color:#333;
+  line-height:2;
+}
+.sub_about .section-1 .section__desc:after {
+  content:none;
+}
+.sub_about .section-2 {
+  margin-top:300px;
+}
+.sub_about .section-3 {
+  margin-top:800px;
+  text-align:center;
+}
+.sub_about .section-3 img {
+  width:70%;
+  max-width:880px;
+  display:block;
+  margin:0 auto;
+}
+.sub_about .section-3 p {
+  margin-top:210px;
+  font-family: 'Noto Serif';
+  font-size:56px;
+  font-weight:400;
+}
+
 
 /* Media Query */
 @media (max-width: 1024px) {
