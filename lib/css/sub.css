@@ -208,12 +208,23 @@ section {
 }
 
 /* sub_about */
+.sub_about {
+  text-align:center;
+}
+.sub_about .section__tit {
+  padding-top:0;
+  margin-bottom:100px;
+  font-size:32px;
+}
 .sub_about .section-1 {
   height:auto;
   background:none;
 }
+.sub_about .section-1 img {
+  vertical-align:top;
+}
 .sub_about .section-1 .section__tit {
-  margin-bottom:130px;
+  margin:200px auto 130px;
   color:#333;
 }
 .sub_about .section-1 .section__desc {
@@ -226,8 +237,93 @@ section {
   content:none;
 }
 .sub_about .section-2 {
+  background-image:url(../images/bg_sub-about_section-2.png);
   margin-top:300px;
 }
+.sub_about .slider-container {
+  overflow:hidden;
+  position:relative;
+  width:90%;
+  max-width:1680px;
+  height:500px;
+  margin:0 auto;
+}
+.sub_about .slider-wrapper {
+  overflow:hidden;
+  position:relative;
+  width:80%;
+  height:100%;
+  margin:0 auto;
+}
+.sub_about .slider {
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display:flex;
+  -webkit-box-orient:horizontal;
+  -ms-flex-direction:row;
+  flex-direction:row;
+  font-size:22px;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  /* overflow-x:scroll; */
+  /* white-space:nowrap; */
+  position:absolute;
+  left:0%;
+  transition:all .7s ease;
+}
+.sub_about .slider .slide {
+}
+.sub_about .slider .box {
+  width:250px;
+  height:250px;
+  background-color:#fff;
+}
+.sub_about .slider .box img {
+  vertical-align:top;
+}
+.sub_about .slider .text {
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display:flex;
+  -webkit-box-orient:vertical;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  font-size:22px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.sub_about .slider .text span + span {
+  /* display:block; */
+  /* -webkit-box-flex: 1;
+  -ms-flex: 1; 
+  flex-grow: 1; */
+  margin-top:7px;
+}
+.sub_about .slider-container .btn-container {
+  position:absolute;
+  top:50%;
+  width:100%;
+  margin-top:-25px;
+}
+.sub_about .slider-container .btn-container button {
+  position:absolute;
+  top:50%;
+  margin-top:-40px;
+  width:44px;
+  height:87px;
+  background-size:cover;
+}
+.sub_about .slider-container .btn-container .btn-left {
+  left:0;
+  background-image:url(../images/ico_arrow_left.png);
+}
+.sub_about .slider-container .btn-container .btn-right {
+  right:0;
+  background-image:url(../images/ico_arrow_right.png);
+}
+
 .sub_about .section-3 {
   margin-top:800px;
   text-align:center;

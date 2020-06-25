@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="lib/css/fonts.css">
     <link rel="stylesheet" href="lib/css/common.css">
     <link rel="stylesheet" href="lib/css/sub.css">
-    <script src="lib/js/jquery-3.5.1.slim.min.js"></script>
     <title>Think Top Technology</title>
 </head>
 
@@ -71,21 +70,106 @@
                 <img src="lib/images/logo_box.png" alt="think top technology" style="max-width:310px;">
             </section>
             <section class="section-2">
-                <div class="slick-slider">
-                    <div class="slick-slide">
-                        <div class="box-photo">
-                            <img src="" alt="">
-                        </div>
-                        <div class="box-text">
-                            <span>1988년</span>
-                            <span>㈜ 거명 창립</span>
-                        </div>
+                <h2 class="section__tit">Stories</h2>
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <ul class="slider">
+                            <li class="slide">
+                                <div class="box photo">
+                                    <img src="lib/images/img_sub-about_grid_01.jpg" alt="">
+                                </div>
+                                <div class="box text">
+                                    <span>1988년</span>
+                                    <span>㈜ 거명 창립</span>
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <div class="box text">
+                                    <span>1990년</span>
+                                    <span>공장 준공</span>
+                                </div>
+                                <div class="box photo">
+                                    <img src="lib/images/img_sub-about_grid_02.png" alt="">
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <div class="box photo">
+                                    <img src="lib/images/img_sub-about_grid_03.png" alt="">
+                                </div>
+                                <div class="box text" style="background-color:#faecdc;">
+                                    <span>1999년</span>
+                                    <span>연구소 신축</span>
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <div class="box text">
+                                    <span>2007년~2010년</span>
+                                    <span>생산시설 및<br>공장 확장</span>
+                                </div>
+                                <div class="box photo">
+                                    <img src="lib/images/img_sub-about_grid_04.png" alt="">
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <div class="box photo">
+                                    <img src="lib/images/img_sub-about_grid_05.png" alt="">
+                                </div>
+                                <div class="box text">
+                                    <span>2011년</span>
+                                    <span>
+                                        회사명 변경<br>
+                                        TTT Chemicals Co., Ltd.
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <div class="box text">
+                                    <span>2015년</span>
+                                    <span>상호 변경 (주)TTT</span>
+                                </div>
+                                <div class="box photo">
+                                    <img src="lib/images/img_sub-about_grid_06.png" alt="">
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <div class="box photo">
+                                    <img src="lib/images/img_sub-about_grid_07.png" alt="">
+                                </div>
+                                <div class="box text" style="background-color:#ed1c24; color:#fff;">
+                                    <span>2015년</span>
+                                    <span>연구소 증축</span>
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <div class="box text">
+                                    <span>2017년</span>
+                                    <span>무역의 수출탑<br>500만불 수상</span>
+                                </div>
+                                <div class="box photo">
+                                    <img src="lib/images/img_sub-about_grid_08.png" alt="">
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <div class="box photo">
+                                    <img src="lib/images/img_sub-about_grid_09.png" alt="">
+                                </div>
+                                <div class="box text" >
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="btn-container">
+                        <button type="button" class="btn-left ir_pm">이전</button>
+                        <button type="button" class="btn-right ir_pm">다음</button>
                     </div>
                 </div>
             </section>
             <section class="section-3">
+                <h2 class="section__tit">주요 기술</h2>
                 <img src="lib/images/img_sub-about_features.png" alt="TTT P.S.A">
                 <p>We React Better</p>
+                <p style="margin-top:250px; font-size: 18px;">분석 기기</p>
             </section>
         </div>
 
@@ -106,7 +190,96 @@
             setTimeout(scrollTo, 0, 0, 1);
         }, false);
     </script>
+    <script src="lib/js/jquery-3.5.1.slim.min.js"></script>
     <script src="lib/js/common.js"></script>
+    <!-- <script src="lib/js/slick.min.js"></script> -->
+    <!-- <script src="lib/js/jquery.touchSlider.js"></script>
+    <script>
+        // $('.slider').slick({
+        //     // dots: true,
+        //     infinite: true,
+        //     speed: 300,
+        //     slidesToShow: 1,
+        //     centerMode: true,
+        //     variableWidth: true
+        // });
+        $('.slider-wrapper').touchSlider({
+            // ... Options
+            siderPage: true
+        });
+    </script> -->
+    <script>
+        var sliderContainer = document.querySelector('.slider-container');
+        var sliderWrapper = sliderContainer.querySelector('.slider-wrapper');
+        var slider = sliderContainer.querySelector('.slider');
+        var btnContainer = sliderContainer.querySelector('.btn-container');
+        var btnLeft = btnContainer.querySelector('.btn-left');
+        var btnRight = btnContainer.querySelector('.btn-right');
+        var sliderWrapperWidth = sliderWrapper.getBoundingClientRect().width;
+        var sliderWidth = slider.getBoundingClientRect().width;
+        var value = 0;
+        var divide = sliderWidth / sliderWrapperWidth;
+        var flag = true;
+
+        window.onresize = function() {
+            sliderWrapperWidth = sliderWrapper.getBoundingClientRect().width;
+            sliderWidth = slider.getBoundingClientRect().width;
+        }
+
+        btnLeft.addEventListener('click', function(e) {
+            console.log(value);
+
+            flag = true;
+            value += sliderWrapperWidth;
+            if(value > 0) {
+                value = 0;
+                slider.style.left = String(value) + 'px';
+                return
+            }
+            // if(value > sliderWrapperWidth) {
+            //     var a = sliderWidth - sliderWrapperWidth;
+            //     value = sliderWrapperWidth - a;
+            //     slider.style.left = String(value) + 'px';
+            //     flag = false;
+            // }
+            slider.style.left = String(value) + 'px';
+        })
+        btnRight.addEventListener('click', btnRightClickHandler);
+
+        function btnRightClickHandler(e) {
+            console.log(value);
+            if(!flag) {
+                // alert('return')
+                return
+            }
+            if(value === -sliderWrapperWidth) {
+                var a = sliderWidth - sliderWrapperWidth;
+                value = sliderWrapperWidth - a;
+                // slider.style.left = String(value) + 'px';
+                setTimeout(() => {
+                    
+                    flag = false;
+                }, 740);
+                
+                // return
+            }
+            value -= sliderWrapperWidth;
+            
+            slider.style.left = String(value) + 'px';
+            // alert('true')
+            flag = true;
+            
+            
+            /*
+            이동할 수 있는 거리 구하기
+            전체 슬라이더 길이 / 화면 가용 넓이 + 나머지
+            */
+
+            
+        }
+        
+        console.log(btnContainer);
+    </script>
 </body>
 
 </html>
