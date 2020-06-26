@@ -398,6 +398,15 @@ section {
     width:100%;
     padding-top:50%;
   }
+  .sub_3d .section-1 .section__tit {
+    max-width:80%;
+    padding-top:150px;
+    font-size:30px;
+    font-size: 6vw;
+  }
+  .sub_3d .button--menu-mobile {
+    background-image: url(../images/ico_menu_black.svg);
+  }
   .sub_about .button--menu-mobile {
     background-image: url(../images/ico_menu_black.svg);
   } 
