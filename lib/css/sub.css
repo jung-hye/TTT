@@ -221,6 +221,7 @@ section {
   background:none;
 }
 .sub_about .section-1 img {
+  /* width:50%; */
   vertical-align:top;
 }
 .sub_about .section-1 .section__tit {
@@ -397,7 +398,43 @@ section {
     width:100%;
     padding-top:50%;
   }
-
+  .sub_about .section-1 .section__tit {
+    font-size:7vw;
+    margin:10px auto 50px;
+  }
+  .sub_about .section-1 .section__desc {
+    width:85%;
+    font-size:16px;
+  }
+  .sub_about .section-1 p + img {
+    width:50%;
+  }
+  .sub_about .section-2 {
+    margin-top:200px;
+  }
+  .sub_about .section__tit {
+    font-size:27px;
+  }
+  .sub_about .section-3 {
+    height:auto;
+    margin-top:300px;
+    margin-bottom:200px;
+  }
+  .sub_about .section-3 p {
+    margin-top:50px;
+    font-size:30px;
+  }
+  .sub_about .section-3 p + p {
+    margin-top:100px;
+  }
+  .sub_about .slider-wrapper {
+    width:250px;
+  }
+  .sub_about .slider-container .btn-container button {
+    width:24px;
+    height:47px;
+  }
+}
 
 
 /* 세로모드 모바일 디바이스 (가로 해상도가 576px 보다 작은 화면에 적용) */
