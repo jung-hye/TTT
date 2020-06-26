@@ -398,6 +398,9 @@ section {
     width:100%;
     padding-top:50%;
   }
+  .sub_about .button--menu-mobile {
+    background-image: url(../images/ico_menu_black.svg);
+  } 
   .sub_about .section-1 .section__tit {
     font-size:7vw;
     margin:10px auto 50px;
