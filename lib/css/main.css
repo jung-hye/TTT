@@ -158,8 +158,10 @@ section {
   background-image: url(../images/bg_section-5.jpg);
 }
 .section-6 {
-  background-color:burlywood;
+  background-color:#fff;
   background-image: url(../images/bg_section-6.jpg);
+  background-size:120%;
+  background-position:50% 100%;
 }
 .section-1 *, .section-2 * {
   color:#fff;

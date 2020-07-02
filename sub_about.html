@@ -177,7 +177,9 @@
             <div class="footer__inner">
                 <address>
                     <span>Tel : 02-730-9448</span>
-                    <span>Fax.02-730-9450</span>
+                    <a href="tel: 02-730-9448">
+                        <span>Fax.02-730-9450</span>
+                    </a>
                     <span>E-mail: tttpsa@tttkorea.com</span>
                     <p>본사 : 서울특별시 중구 새문안로 22(충정로1가)문화일보사 9층</p>
                     <p>연구소 : 충청남도 천안시 동남구 성남면 산사대화로 277</p>
@@ -192,22 +194,6 @@
     </script>
     <script src="lib/js/jquery-3.5.1.slim.min.js"></script>
     <script src="lib/js/common.js"></script>
-    <!-- <script src="lib/js/slick.min.js"></script> -->
-    <!-- <script src="lib/js/jquery.touchSlider.js"></script>
-    <script>
-        // $('.slider').slick({
-        //     // dots: true,
-        //     infinite: true,
-        //     speed: 300,
-        //     slidesToShow: 1,
-        //     centerMode: true,
-        //     variableWidth: true
-        // });
-        $('.slider-wrapper').touchSlider({
-            // ... Options
-            siderPage: true
-        });
-    </script> -->
     <script>
         var sliderContainer = document.querySelector('.slider-container');
         var sliderWrapper = sliderContainer.querySelector('.slider-wrapper');
@@ -217,16 +203,21 @@
         var btnRight = btnContainer.querySelector('.btn-right');
         var sliderWrapperWidth = sliderWrapper.getBoundingClientRect().width;
         var sliderWidth = slider.getBoundingClientRect().width;
+        var sliderWidth2 = slider.getBoundingClientRect().width;
         // alert(sliderWidth)
         var value = 0;
         var divide = sliderWidth / sliderWrapperWidth;
         var flag = true;
 
+        var movedVal = 0;
+        var leftVal = sliderWidth2;
+
         window.onresize = function() {
             sliderWrapperWidth = sliderWrapper.getBoundingClientRect().width;
             sliderWidth = slider.getBoundingClientRect().width;
             
-            sliderWork();
+            // sliderWork();
+            sliderWork2();
         }
         function sliderWork() {
             if(document.body.clientWidth < 768) {
@@ -273,7 +264,7 @@
                     console.log(value);
                     if(!flag) {
                         // alert('return')
-                        return
+                        // return
                     }
                     if(value === -sliderWrapperWidth) {
                         var a = sliderWidth - sliderWrapperWidth;
@@ -287,8 +278,8 @@
                         // return
                         }
                         value -= sliderWrapperWidth;
-                        
-                        slider.style.left = String(value) + 'px';
+                        slider.style.transform = `translateX(${String(value)}px)`
+                        // slider.style.left = String(value) + 'px';
                         // alert('true')
                         flag = true;
                         
@@ -307,8 +298,55 @@
             }
         }
         
-        sliderWork();
+        // sliderWork();
         
+        // 두번째 테스트
+        function sliderWork2() {
+            console.log(`움직인 값은 ${movedVal}`);
+            console.log(`남은 값은 ${leftVal}`);
+            function btnLeftClickHandler() {
+                // 남은 값이 가용 범위보다 적으면 계산
+                // if(leftVal === 0) {
+                //     return
+                // }
+                movedVal += sliderWrapperWidth;
+                slider.style.transform = 'translateX(' + movedVal + 'px)';
+                leftVal -= movedVal;
+
+                
+                console.log(`움직인 값은 ${movedVal}`);
+                console.log(`남은 값은 ${leftVal}`);
+
+                
+            }
+
+            function btnRightClickHandler() {
+                // 남은 값이 가용 범위보다 적으면 계산
+                // if(leftVal === 0) {
+                //     // return
+                // }else 
+                if(leftVal < sliderWrapperWidth) {
+                    movedVal += -(Math.abs(sliderWrapperWidth - leftVal));
+                    slider.style.transform = 'translateX(' + movedVal + 'px)';
+                    leftVal = 0;
+                }else {
+                    movedVal += -sliderWrapperWidth;
+                    slider.style.transform = 'translateX(' + movedVal + 'px)';
+                    leftVal += movedVal;
+                }
+
+                
+                console.log(`움직인 값은 ${movedVal}`);
+                console.log(`남은 값은 ${leftVal}`);
+
+                
+            }
+
+            btnLeft.addEventListener('click', btnLeftClickHandler);
+            btnRight.addEventListener('click', btnRightClickHandler);
+        }
+        sliderWork2();
+
     </script>
 </body>
 
