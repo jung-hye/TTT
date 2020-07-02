@@ -395,15 +395,22 @@ th, td {
     height:70vh;
   }
   .footer {
+    background-image:url(../images/bg_footer_mobile.jpg);
     height:60vh;
     background-position: bottom;
-    background-size:500%;
+    background-size:cover;
+  }
+  .footer__inner {
+    bottom:15px;
   }
   .footer span {
     font-size:14px;
   }
+  .footer p:first-of-type {
+    margin-top:1em;
+  }
   .footer p {
-    font-size:12px;
+    font-size:10px;
   }
   .contact {
     display:flex;
