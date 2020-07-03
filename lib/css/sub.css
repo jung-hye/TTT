@@ -264,6 +264,17 @@ section {
   height:100%;
   margin:0 auto;
 }
+@keyframes slidein {
+  0% {
+    /* left:0; */
+    transform:translateX(0)
+  }
+
+  100% {
+    /* left:-100%; */
+    transform:translateX(-100%)
+  }
+}
 .sub_about .slider {
   display: -webkit-box; 
   display: -ms-flexbox; 
@@ -280,9 +291,14 @@ section {
   position:absolute;
   left:0%;
   transition:all .7s ease;
+  animation-duration:20s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 .sub_about .slider .slide {
   position:relative;
+
 }
 .sub_about .slider .box {
   width:250px;
