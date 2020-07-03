@@ -292,7 +292,7 @@ section {
   left:0%;
   transition:all .7s ease;
   animation-duration:20s;
-  animation-name: slidein;
+  /* animation-name: slidein; */
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }

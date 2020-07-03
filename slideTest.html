@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .slider-wrapper {
+      overflow:hidden;
+      position: relative;
+      width:80%;
+      height:500px;
+      margin:0 auto;
+    }
+    .slider {
+      width:auto;
+      position:absolute;
+      top:0;
+      left:0;
+      height:500px;
+      font-size:0;
+      white-space:nowrap;
+      transition:all 1s ease;
+    }
+    .slider:after {
+      content:'';
+      display:block;
+      clear:both;
+    }
+    .slide {
+      /* flex-basis:25%; */
+      display:inline-block;
+      width:250px;
+      height:500px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-wrapper">
+      <div class="slider">
+        <div class="slide" style="background-color:green;"></div>
+        <div class="slide" style="background-color:blue;"></div>
+        <div class="slide"></div>
+        <div class="slide" style="background-color:blue;"></div>
+        <div class="slide"></div>
+        <div class="slide" style="background-color:blue;"></div>
+        <div class="slide"></div>
+        <div class="slide" style="background-color:pink;"></div>
+      </div>
+  </div>
+  <div class="btn-wrapper" style="margin-top:100px; text-align:center;">
+    <button type="button" class="btn-left">left</button>
+    <button type="button" class="btn-right">right</button>
+  </div>
+<script>
+  var btnContainer = document.querySelector('.btn-wrapper');
+  var btnLeft = btnContainer.querySelector('.btn-left');
+  var btnRight = btnContainer.querySelector('.btn-right');
+  var sliderWrapper = document.querySelector('.slider-wrapper');
+  var slider = sliderWrapper.querySelector('.slider');
+  var sliderWrapperWidth = sliderWrapper.getBoundingClientRect().width;
+  var sliderWidth = slider.getBoundingClientRect().width;
+  var leftVal;
+
+  function getWidthValue() {
+    sliderWrapper = document.querySelector('.slider-wrapper');
+    slider = sliderWrapper.querySelector('.slider');
+    sliderWrapperWidth = sliderWrapper.getBoundingClientRect().width;
+    sliderWidth = slider.getBoundingClientRect().width;
+    leftVal = sliderWidth - sliderWrapperWidth;
+
+    console.log(sliderWrapperWidth);
+    console.log(sliderWidth - sliderWrapperWidth);
+  }
+  getWidthValue();
+
+  var value = 0;
+
+
+  window.addEventListener('resize', getWidthValue);
+
+  btnRight.addEventListener('click', function (e) {
+    
+    value -= leftVal;
+    slider.style.left = value + 'px';
+  })
+  btnLeft.addEventListener('click', function (e) {
+    value += leftVal;
+    slider.style.left = value + 'px';
+  })
+</script>
+</body>
+</html>
