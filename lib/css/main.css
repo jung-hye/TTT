@@ -235,8 +235,6 @@ section {
   }
   .footer {
     height:60vh;
-    background-position: bottom;
-    background-size:500%;
   }
   .footer span {
     font-size:14px;
