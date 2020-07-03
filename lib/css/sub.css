@@ -3,7 +3,7 @@
 
 }
 .btn--close {
-  background-image: url(../images/ico_close_black.svg);
+  background-image: url(../images/ico_close.svg);
 }
 .header {
   display:block;
@@ -230,24 +230,32 @@ section {
 }
 .sub_about .section-1 .section__desc {
   max-width:900px;
-  margin:0 auto 70px;
+  margin:0 auto 100px;
   color:#333;
   line-height:2;
+}
+.sub_about .section-1 .section__desc strong{
+  font-weight:700;
 }
 .sub_about .section-1 .section__desc:after {
   content:none;
 }
 .sub_about .section-2 {
   background-image:url(../images/bg_sub-about_section-2.png);
+  background-repeat:no-repeat;
+  background-position:50% 0;
   margin-top:300px;
+}
+.sub_about .section-2 {
 }
 .sub_about .slider-container {
   overflow:hidden;
   position:relative;
   width:90%;
   max-width:1680px;
-  height:500px;
+  height:750px;
   margin:0 auto;
+  /* padding:50px 0 100px; */
 }
 .sub_about .slider-wrapper {
   overflow:hidden;
@@ -274,11 +282,15 @@ section {
   transition:all .7s ease;
 }
 .sub_about .slider .slide {
+  position:relative;
 }
 .sub_about .slider .box {
   width:250px;
   height:250px;
-  background-color:#fff;
+  background-color:transparent;
+}
+.sub_about .slider .box + .box {
+  margin-top:100px;
 }
 .sub_about .slider .box img {
   vertical-align:top;
@@ -301,6 +313,42 @@ section {
   -ms-flex: 1; 
   flex-grow: 1; */
   margin-top:7px;
+}
+.sub_about .slider .slide:nth-child(odd) .year {
+  top:50%;
+  padding-top:10px;
+  border-top:1px solid #333;
+}
+.sub_about .slider .slide:nth-child(even) .year {
+  top:43.8%;
+  padding-bottom:10px;
+  border-bottom:1px solid #333;
+}
+.sub_about .slider .slide:nth-child(odd) .year:after {
+  top:0;
+  margin-top:-6px;
+}
+.sub_about .slider .slide:nth-child(even) .year:after {
+  bottom:0;
+  margin-bottom:-6px;
+}
+.sub_about .slider .text .year {
+  display:block;
+  width:100%;
+  position:absolute;
+  /* border-bottom:1px solid #333; */
+}
+.sub_about .slider .text .year:after {
+  content:'';
+  position:absolute;
+
+  left:50%;
+  width:12px;
+  height:12px;
+  margin-left:-6px;
+
+  border-radius:50%;
+  background-color:#333;
 }
 .sub_about .slider-container .btn-container {
   position:absolute;
@@ -361,6 +409,7 @@ section {
 }
 .sub_about .section-4 .item__tit {
   margin-bottom:60px;
+  padding-top:50px;
   font-weight:700;
   font-size:28px;
 }
@@ -377,7 +426,8 @@ section {
 }
 .sub_about .section-4 .item__desc {
   overflow:hidden;
-  padding-bottom:100px;
+  padding-bottom:50px;
+  border-bottom:1px solid #e8e8e8;
 }
 .sub_about .section-4 .item__img {
   overflow:hidden;
@@ -397,6 +447,7 @@ section {
   float:left;
   width:50%;
   font-size:20px;
+  line-height:1.5;
   vertical-align:top;
   box-sizing:border-box;
 }

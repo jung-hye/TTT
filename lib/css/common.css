@@ -176,8 +176,12 @@ th, td {
   left:50%;
   width:90%;
   max-width:1346px;
-  padding:110px 110px;
+  padding:15% 7%;
   background-color:#fff;
+  background-image:url(../images/bg_modal_top.png);
+  background-position:101% 0;
+  background-size:92%;
+  background-repeat:no-repeat;
   -webkit-box-sizing:border-box;
   box-sizing:border-box;
   -moz-transform:translateX(-50%);
@@ -212,7 +216,7 @@ th, td {
   display:none;
 }
 .modal__txt-wrapper {
-  position:relative;
+  /* position:relative; */
 }
 .modal__tit {
   margin-bottom:25px;
@@ -233,10 +237,11 @@ th, td {
   font-weight:700;
 }
 .modal__txt-sub {
+  display:none;
   position:absolute;
-  right:0;
-  top:0;
-  color:#999;
+  right:110px;
+  top:115px;
+  color:#fff;
   font-size:20px;
 }
 .modal__img-wrapper {
@@ -250,7 +255,7 @@ th, td {
 }
 .modal__button--close {
   position:absolute;
-  top:40px;
+  top:-80px;
   right:40px;
   background-size:30px;
   cursor: pointer;
@@ -263,6 +268,9 @@ th, td {
   border:1px solid #333;
   -webkit-box-sizing:border-box;
   box-sizing:border-box;
+  -webkit-box-shadow: 8px 8px 12px 0px rgba(0,0,0,0.12);
+  -moz-box-shadow: 8px 8px 12px 0px rgba(0,0,0,0.12);
+  box-shadow: 8px 8px 12px 0px rgba(0,0,0,0.12);
 }
 .contact .left {
   /* float:left; */
@@ -308,7 +316,8 @@ th, td {
   .modal {
     width:80%;
     top:100px;
-    padding:20px;
+    /* padding:20px; */
+    padding:12% 5% 10%;
   }
   .modal__tit {
     margin-bottom:5px;
@@ -413,17 +422,21 @@ th, td {
     font-size:10px;
   }
   .contact {
-    display:flex;
-    width:267px;
-    margin-top:70px;
-    font-size:14px;
+    display:block;
+    width:90%;
+    margin:70px auto 20px; 
+    font-size:12px;
   }
   .contact .left {
     /* height:95px; */
+    width:100%;
+    padding:10px 0;
+    border-right:none;
+    border-bottom:1px solid #333;
     font-size:14px;
   }
   .contact .right {
-    
+    width:100%;
   }
   .contact .right .top {
     padding:10px 10px;
