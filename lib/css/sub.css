@@ -476,14 +476,18 @@ section {
   /* vertical-align:top; */
 }
 .sub_about .section-4 .item__txt {
-  float:left;
+  float:right;
   width:50%;
   font-size:20px;
   line-height:1.5;
   vertical-align:top;
   box-sizing:border-box;
 }
-
+.sub_about .section-4 .item__txt .txt-comp{
+  margin-top:40px;
+  font-size:16px;
+  font-weight:300;
+}
 
 /* Media Query */
 @media (max-width: 1024px) {
@@ -612,6 +616,9 @@ section {
     width:100%;
     margin-top:20px;
     font-size:14px;
+  }
+  .sub_about .section-4 .item__txt .txt-comp {
+    font-size:12px;
   }
   .sub_about .section-4 .item__img {
     float:none;
