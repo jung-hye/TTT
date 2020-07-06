@@ -199,6 +199,15 @@ section {
 .sub_urethan .section__desc:after {
   border-color:#333;
 }
+.sub_urethan .section-sub.first {
+  height:400px;
+}
+.sub_urethan .section-sub.first .section-sub__txt-wrapper {
+  width:60%;
+}
+.sub_urethan .section-sub.first .section-sub__img-wrapper {
+  width:40%;
+}
 
 /* sub_3d */
 .sub_3d .section-1 {
@@ -547,6 +556,15 @@ section {
   .section-sub__img-wrapper img {
     width:100%;
     height:auto;
+  }
+  .sub_urethan .section-sub.first {
+    height:auto;
+  }
+  .sub_urethan .section-sub.first .section-sub__txt-wrapper {
+    width:100%;
+  }
+  .sub_urethan .section-sub.first .section-sub__img-wrapper {
+    width:100%;
   }
   .sub_3d .section-1 .section__tit {
     max-width:80%;
