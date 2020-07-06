@@ -298,7 +298,7 @@ section {
   /* white-space:nowrap; */
   position:absolute;
   left:0%;
-  transition:all .7s ease;
+  transition:all 1.5s ease-in-out;
   animation-duration:20s;
   /* animation-name: slidein; */
   animation-iteration-count: infinite;
@@ -384,7 +384,7 @@ section {
   position:absolute;
   top:50%;
   margin-top:-40px;
-  width:44px;
+  width:45px;
   height:87px;
   background-size:cover;
 }
@@ -472,7 +472,8 @@ section {
   /* width:100%; */
   display:block;
   height:100%;
-  vertical-align:top;
+  margin:0 auto;
+  /* vertical-align:top; */
 }
 .sub_about .section-4 .item__txt {
   float:left;

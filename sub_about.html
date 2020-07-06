@@ -63,7 +63,7 @@
                     새로운 생각으로<br>연구개발 하는 强한 기업
                 </h2>
                 <p class="section__desc">
-                    <strong>TTT</strong>는 1988년 창립 이래 항상 새로운 제품 개발만을  目標로 하는 <strong>R&D 中心會社</strong> 입니다.<br>
+                    <strong>TTT</strong>는 1988년 창립 이래 항상 새로운 제품 개발만을 目標로 하는 <strong>R&D 中心會社</strong> 입니다.<br>
                     계속적으로 변하는 시작 TREND에 반응하며 새로운 시장 주도형 제품을 연구하고 있습니다.<br>
                     항상 새로운 생각을 가지고 모든 産業에 효율적이며 안전하고 강한 TTT 시장을 확보,<br>硏究해 오고 있으며 앞으로도 다른 경쟁 업체와 달리 연구 지향적인 회사로 도약할 것입니다.<br>
                     변화의 선봉에서 세계 우수한 업체들과 경쟁하며, 항상 새로운 생각으로 연구개발하는 强한 會社로 도약할 것입니다.
@@ -155,13 +155,13 @@
                                 <div class="box photo">
                                     <img src="lib/images/img_sub-about_grid_09.png" alt="">
                                 </div>
-                                <div class="box text" >
+                                <div class="box text">
                                     <span class="year"></span>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="btn-container">
                         <button type="button" class="btn-left ir_pm">이전</button>
                         <button type="button" class="btn-right ir_pm">다음</button>
@@ -197,7 +197,7 @@
                             <img src="lib/images/about/img_list_item-2.jpg" alt="">
                         </div>
                         <div class="item__txt">
-                            Py(pyrolysis)-GC/MS는 고분자 물질의 정량/정성적 분석이 가능합니다. 열분해(pyrolysis)를 통해 발생된 기체생성물은 각 물질의 독특한 특성을 반영,  성분분석을 통해 고분자의 조성, 공중합체의 구조 등을 확인하는 것이 사례입니다.<br><br>입고된 원료들의 Py-GC/MS 진행하여, Lot 관리를 진행하고 있으며, 대상 물질의 미량 미지 시료를 찾아, 품질 관리 및 연구 개발에 적용하고 있습니다.
+                            Py(pyrolysis)-GC/MS는 고분자 물질의 정량/정성적 분석이 가능합니다. 열분해(pyrolysis)를 통해 발생된 기체생성물은 각 물질의 독특한 특성을 반영, 성분분석을 통해 고분자의 조성, 공중합체의 구조 등을 확인하는 것이 사례입니다.<br><br>입고된 원료들의 Py-GC/MS 진행하여, Lot 관리를 진행하고 있으며, 대상 물질의 미량 미지 시료를 찾아, 품질 관리 및 연구 개발에 적용하고 있습니다.
                         </div>
                     </dd>
                 </dl>
@@ -216,131 +216,204 @@
             </div>
         </footer>
     </div>
-    <script>
-        window.addEventListener('load', function () {
-            setTimeout(scrollTo, 0, 0, 1);
-        }, false);
-    </script>
-    <script src="lib/js/jquery-3.5.1.slim.min.js"></script>
-    <script src="lib/js/common.js"></script>
-    <!-- <script src="lib/js/slick.min.js"></script> -->
-    <!-- <script src="lib/js/jquery.touchSlider.js"></script>
-    <script>
-        // $('.slider').slick({
-        //     // dots: true,
-        //     infinite: true,
-        //     speed: 300,
-        //     slidesToShow: 1,
-        //     centerMode: true,
-        //     variableWidth: true
-        // });
-        $('.slider-wrapper').touchSlider({
-            // ... Options
-            siderPage: true
-        });
-    </script> -->
-    <script>
-        var sliderContainer = document.querySelector('.slider-container');
-        var sliderWrapper = sliderContainer.querySelector('.slider-wrapper');
-        var slider = sliderContainer.querySelector('.slider');
-        var btnContainer = sliderContainer.querySelector('.btn-container');
-        var btnLeft = btnContainer.querySelector('.btn-left');
-        var btnRight = btnContainer.querySelector('.btn-right');
-        var sliderWrapperWidth = sliderWrapper.getBoundingClientRect().width;
-        var sliderWidth = slider.getBoundingClientRect().width;
-        // alert(sliderWidth)
-        var value = 0;
-        var divide = sliderWidth / sliderWrapperWidth;
-        var flag = true;
+<script src="lib/js/jquery-3.5.1.slim.min.js"></script>
+<script src="lib/js/common.js"></script>
+<!-- <script src="lib/js/slick.min.js"></script> -->
+<!-- <script src="lib/js/jquery.touchSlider.js"></script>
+<script>
+// $('.slider').slick({
+//     // dots: true,
+//     infinite: true,
+//     speed: 300,
+//     slidesToShow: 1,
+//     centerMode: true,
+//     variableWidth: true
+// });
+$('.slider-wrapper').touchSlider({
+    // ... Options
+    siderPage: true
+});
+</script> -->
+<!-- <script>
+var sliderContainer = document.querySelector('.slider-container');
+var sliderWrapper = sliderContainer.querySelector('.slider-wrapper');
+var slider = sliderContainer.querySelector('.slider');
+var btnContainer = sliderContainer.querySelector('.btn-container');
+var btnLeft = btnContainer.querySelector('.btn-left');
+var btnRight = btnContainer.querySelector('.btn-right');
+var sliderWrapperWidth = sliderWrapper.getBoundingClientRect().width;
+var sliderWidth = slider.getBoundingClientRect().width;
+// alert(sliderWidth)
+var value = 0;
+var divide = sliderWidth / sliderWrapperWidth;
+var flag = true;
 
-        window.onresize = function() {
-            sliderWrapperWidth = sliderWrapper.getBoundingClientRect().width;
-            sliderWidth = slider.getBoundingClientRect().width;
-            
-            sliderWork();
-        }
-        function sliderWork() {
-            if(document.body.clientWidth < 768) {
-                // 모바일일 경우
-                function sliderHandlerMobile() {
-                    function btnRightClickHandlerMobile(e) {
-                        value -= sliderWrapperWidth;
+window.onresize = function() {
+    sliderWrapperWidth = sliderWrapper.getBoundingClientRect().width;
+    sliderWidth = slider.getBoundingClientRect().width;
+    
+    sliderWork();
+}
+function sliderWork() {
+    if(document.body.clientWidth < 768) {
+        // 모바일일 경우
+        function sliderHandlerMobile() {
+            function btnRightClickHandlerMobile(e) {
+                value -= sliderWrapperWidth;
 
-                        if(value === -sliderWidth) {
-                            // value = -sliderWidth;
-                            // slider.style.left = String(value) + 'px';
-                            // return
-                        }
-                        slider.style.left = String(value) + 'px';
-                    }
-                    btnRight.removeEventListener('click',btnRightClickHandler);
-                    btnRight.addEventListener('click', btnRightClickHandlerMobile);
-                    // btnRight.onClick = btnRightClickHandlerMobile;
+                if(value === -sliderWidth) {
+                    // value = -sliderWidth;
+                    // slider.style.left = String(value) + 'px';
+                    // return
                 }
-            
-                sliderHandlerMobile();
-            }else {
-                // 데스크탑의 경우
-            
-                function btnLeftClickHandler(e) {
-                    console.log(value);
-
-                    flag = true;
-                    value += sliderWrapperWidth;
-                    if(value > 0) {
-                        value = 0;
-                        slider.style.left = String(value) + 'px';
-                        return
-                    }
-                    // if(value > sliderWrapperWidth) {
-                    //     var a = sliderWidth - sliderWrapperWidth;
-                    //     value = sliderWrapperWidth - a;
-                    //     slider.style.left = String(value) + 'px';
-                    //     flag = false;
-                    // }
-                    slider.style.left = String(value) + 'px';
-                }
-                function btnRightClickHandler(e) {
-                    console.log(value);
-                    if(!flag) {
-                        // alert('return')
-                        return
-                    }
-                    if(value === -sliderWrapperWidth) {
-                        var a = sliderWidth - sliderWrapperWidth;
-                        value = sliderWrapperWidth - a;
-                        // slider.style.left = String(value) + 'px';
-                        setTimeout(() => {
-                            
-                            flag = false;
-                        }, 740);
-                        
-                        // return
-                        }
-                        value -= sliderWrapperWidth;
-                        
-                        slider.style.left = String(value) + 'px';
-                        // alert('true')
-                        flag = true;
-                        
-                        
-                        /*
-                        이동할 수 있는 거리 구하기
-                        전체 슬라이더 길이 / 화면 가용 넓이 + 나머지
-                        */
-
-                        
-                    }
-                    
-                // btnRight.onClick = btnRightClickHandler;
-                btnLeft.addEventListener('click', btnLeftClickHandler);
-                btnRight.addEventListener('click', btnRightClickHandler);
+                slider.style.left = String(value) + 'px';
             }
+            btnRight.removeEventListener('click',btnRightClickHandler);
+            btnRight.addEventListener('click', btnRightClickHandlerMobile);
+            // btnRight.onClick = btnRightClickHandlerMobile;
         }
-        
-        sliderWork();
-        
-    </script>
+    
+        sliderHandlerMobile();
+    }else {
+        // 데스크탑의 경우
+    
+        function btnLeftClickHandler(e) {
+            console.log(value);
+
+            flag = true;
+            value += sliderWrapperWidth;
+            if(value > 0) {
+                value = 0;
+                slider.style.left = String(value) + 'px';
+                return
+            }
+            // if(value > sliderWrapperWidth) {
+            //     var a = sliderWidth - sliderWrapperWidth;
+            //     value = sliderWrapperWidth - a;
+            //     slider.style.left = String(value) + 'px';
+            //     flag = false;
+            // }
+            slider.style.left = String(value) + 'px';
+        }
+        function btnRightClickHandler(e) {
+            console.log(value);
+            if(!flag) {
+                // alert('return')
+                return
+            }
+            if(value === -sliderWrapperWidth) {
+                var a = sliderWidth - sliderWrapperWidth;
+                value = sliderWrapperWidth - a;
+                // slider.style.left = String(value) + 'px';
+                setTimeout(() => {
+                    
+                    flag = false;
+                }, 740);
+                
+                // return
+                }
+                value -= sliderWrapperWidth;
+                
+                slider.style.left = String(value) + 'px';
+                // alert('true')
+                flag = true;
+                
+                
+                /*
+                이동할 수 있는 거리 구하기
+                전체 슬라이더 길이 / 화면 가용 넓이 + 나머지
+                */
+
+                
+            }
+            
+        // btnRight.onClick = btnRightClickHandler;
+        btnLeft.addEventListener('click', btnLeftClickHandler);
+        btnRight.addEventListener('click', btnRightClickHandler);
+    }
+}
+
+sliderWork();
+
+</script> -->
+<script>
+    subModalWork();
+</script>
+<script>
+    var btnContainer = document.querySelector('.btn-container');
+    var btnLeft = btnContainer.querySelector('.btn-left');
+    var btnRight = btnContainer.querySelector('.btn-right');
+    var sliderWrapper = document.querySelector('.slider-wrapper');
+    var slider = sliderWrapper.querySelector('.slider');
+    var sliderWrapperWidth = sliderWrapper.getBoundingClientRect().width;
+    var sliderWidth = slider.getBoundingClientRect().width;
+    console.log(sliderWidth)
+    var leftVal;
+    var value = 0;
+
+    function getWidthValue() {
+        // 변수 값 업데이트
+        sliderWrapper = document.querySelector('.slider-wrapper');
+        slider = sliderWrapper.querySelector('.slider');
+        sliderWrapperWidth = sliderWrapper.getBoundingClientRect().width;
+        sliderWidth = slider.getBoundingClientRect().width;
+        leftVal = sliderWidth - sliderWrapperWidth;
+    }
+    
+    function sliderWork() {
+        // 모바일, 데스크탑 슬라이더 분기
+
+        if(document.body.clientWidth < 768) {
+            // 모바일일 경우
+            function btnRightClickHandlerMobile(e) {
+                if(value === -2000) {
+                    return
+                }
+                value -= sliderWrapperWidth;
+                slider.style.left = value + 'px';
+            }
+            function btnLeftClickHandlerMobile(e) {
+                if(value === 0) {
+                    return
+                }
+                value += sliderWrapperWidth;
+                slider.style.left = value + 'px';
+            }
+            btnRight.removeEventListener('click',btnRightClickHandler);
+            btnRight.addEventListener('click', btnRightClickHandlerMobile);
+            btnLeft.removeEventListener('click',btnLeftClickHandler);
+            btnLeft.addEventListener('click', btnLeftClickHandlerMobile);
+        }else {
+            // 데스크탑의 경우
+            function btnRightClickHandler(e) {
+                if (value === -leftVal) {
+                    return
+                }
+                value -= leftVal;
+                console.log(value);
+                slider.style.left = value + 'px';
+            }
+            function btnLeftClickHandler(e) {
+                if (value === 0) {
+                    return
+                }
+                value += leftVal;
+
+                console.log(value);
+                slider.style.left = value + 'px';
+            }
+
+            btnRight.addEventListener('click', btnRightClickHandler);
+            btnLeft.addEventListener('click', btnLeftClickHandler);
+        }
+    }
+    
+    getWidthValue();
+    sliderWork();
+
+    window.addEventListener('resize', getWidthValue);
+    window.addEventListener('resize', sliderWork);
+</script>
 </body>
 
 </html>

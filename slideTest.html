@@ -70,8 +70,9 @@
     sliderWidth = slider.getBoundingClientRect().width;
     leftVal = sliderWidth - sliderWrapperWidth;
 
-    console.log(sliderWrapperWidth);
-    console.log(sliderWidth - sliderWrapperWidth);
+    console.log(leftVal);
+    // console.log(sliderWidth - sliderWrapperWidth);
+    
   }
   getWidthValue();
 
@@ -81,12 +82,20 @@
   window.addEventListener('resize', getWidthValue);
 
   btnRight.addEventListener('click', function (e) {
-    
+    if(value === -leftVal) {
+      return
+    }
     value -= leftVal;
+    console.log(value);
     slider.style.left = value + 'px';
   })
   btnLeft.addEventListener('click', function (e) {
+    if(value === 0) {
+      return
+    }
     value += leftVal;
+    
+    console.log(value);
     slider.style.left = value + 'px';
   })
 </script>
