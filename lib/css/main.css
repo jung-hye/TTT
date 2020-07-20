@@ -18,7 +18,7 @@
 section {
   position: relative;
   /* height:100vh; */
-  height:830px;
+  height:850px;
   background-size:cover;
   background-repeat:no-repeat;
   background-position:50% 0%;
@@ -160,6 +160,10 @@ section {
 .section-6 {
   background-color:burlywood;
   background-image: url(../images/bg_section-6.jpg);
+  background-position:0 100%;
+}
+.section-6  .section__link {
+  background-color:rgba(256, 256, 256, .7)
 }
 .section-1 *, .section-2 * {
   color:#fff;
