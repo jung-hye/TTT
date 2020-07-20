@@ -158,9 +158,10 @@ section {
   background-image: url(../images/bg_section-5.jpg);
 }
 .section-6 {
-  background-color:burlywood;
+  background-color:#fff;
   background-image: url(../images/bg_section-6.jpg);
-  background-position:0 100%;
+  background-position:50% 100%;
+  background-size:98%;
 }
 .section-6  .section__link {
   background-color:rgba(256, 256, 256, .7)
