@@ -457,6 +457,7 @@ section {
   display:inline-block;
   width:27px;
   height:36px;
+  margin-right:10px;
   background-image:url(../images/ico_list_deco.png);
   background-size:100%;
   background-position:50% 50%;
