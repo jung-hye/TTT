@@ -304,6 +304,21 @@ th, td {
   background-size:30px;
   cursor: pointer;
 }
+.modal__list {
+  margin-top:20px;
+  font-size:20px;
+  font-weight:400;
+}
+.modal__list li {
+  display:inline-block;
+  padding:10px 25px;
+  margin-bottom:10px;
+  margin-right:5px;
+  background-color:#333;
+  color:#fff;
+  -webkit-border-radius:20px;
+  border-radius:20px;
+}
 .green-tit {
   display:block;
   max-width:500px;
@@ -401,6 +416,12 @@ th, td {
   .modal__btn {
     width:25px;
   }
+  .modal__arrow {
+    position:absolute;
+    top:40vh;
+    left:-10%;
+    right:-10%;
+  }
   .green-tit {
     display:block;
     max-width:500px;
@@ -413,11 +434,27 @@ th, td {
     border-radius:20px;
     font-size:12px;
   }
-  .modal__arrow {
-    position:absolute;
-    top:40vh;
-    left:-10%;
-    right:-10%;
+  .modal__txt-wrapper.sub {
+    margin-top:50px;
+  }
+  .modal__list {
+    margin-top:20px;
+    font-size:14px;
+    font-weight:400;
+  }
+  .modal__list li {
+    display:inline-block;
+    padding:5px 15px;
+    margin-bottom:5px;
+    margin-right:3px;
+    background-color:#333;
+    color:#fff;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+  }
+  .modal__tit-sub:before {
+    width:14px;
+    height:21px;
   }
   body.menu_mobile {
     overflow:hidden;
