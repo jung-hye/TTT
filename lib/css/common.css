@@ -310,9 +310,12 @@ th, td {
   font-weight:400;
 }
 .modal__list li {
+  display:block;
+}
+.modal__list span {
   display:inline-block;
   padding:10px 25px;
-  margin-bottom:10px;
+  margin-bottom:12px;
   margin-right:5px;
   background-color:#333;
   color:#fff;
@@ -442,7 +445,7 @@ th, td {
     font-size:14px;
     font-weight:400;
   }
-  .modal__list li {
+  .modal__list span {
     display:inline-block;
     padding:5px 15px;
     margin-bottom:5px;
