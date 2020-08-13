@@ -521,6 +521,7 @@ section {
   }
   .button--close-mobile {
     display:block;
+    background-image: url(../images/ico_close_black.svg);
   }
   .section-1 {
     height:100vh;

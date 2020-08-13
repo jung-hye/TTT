@@ -176,7 +176,6 @@ th, td {
   left:50%;
   width:90%;
   max-width:1346px;
-  /* max-height:75%; */
   padding:15% 7% 46%;
   background-color:#fff;
   background-image:url(../images/bg_modal_top.png);
@@ -203,8 +202,6 @@ th, td {
   background-position:0 100%;
 }
 .modal__inner {
-  /* max-height:100%; */
-  /* overflow-y:scroll; */
 }
 .modal__arrow {
   position:fixed;
@@ -229,9 +226,7 @@ th, td {
 
 }
 .modal__item {
-  /* overflow-y:scroll; */
   display:none;
-  /* max-height:100%; */
 }
 .modal__txt-wrapper {
   /* position:relative; */
