@@ -147,6 +147,10 @@ th, td {
   padding-left:1em;
   /* margin-bottom:1em; */
   font-size:22px;
+  color:#fff;
+}
+.footer a {
+  color:#fff;
 }
 .footer span:first-of-type {
   padding:0;
