@@ -127,7 +127,6 @@ function desktopScrollAnimation() {
     function setValue() {
         // if(matchMedia("screen and (min-width: 769px)").matches) {
         if(document.body.clientWidth > 768) {
-
             var s = skrollr.init({
                 smoothScrolling: true,
                 smoothScrollingDuration: 200,
@@ -150,6 +149,7 @@ function desktopScrollAnimation() {
                 }
             });
         }else {
+            console.log(document.body.clientWidth)
             return
         }
     }
@@ -173,13 +173,15 @@ $(".bg-dim").on("click", function () {
 })
 
 
-
+// 사용안함
 function parallaxScrolling () {
     var viewportWidth;
+    alert(1);
 
     setTimeout(function(){
         viewportWidth = $(window).width();
         // alert(viewportWidth);
+        console.log(viewportWidth)
         animate();
     }, 500)
     
@@ -272,7 +274,7 @@ function parallaxScrolling () {
             $('html, body').bind('DOMMouseScroll MouseScrollEvent MozMousePixelScroll wheel scroll', function () {
                 scrollValue = $(window).scrollTop();
                 console.log(scrollValue);
-                scrollSetting();               
+                scrollSetting();
             });
         }else {
             alert('mobile');

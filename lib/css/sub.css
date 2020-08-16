@@ -525,12 +525,16 @@ section {
   }
   .section-1 {
     height:100vh;
+    background-size:auto 85%;
   }
   .section-1 .section__tit {
     max-width:80%;
     padding-top:150px;
-    font-size:30px;
-    font-size: 9vw;
+    font-size:28px;
+    /* font-size: 9vw; */
+  }
+  .section-1 .section__desc {
+    font-size:22px;
   }
   .section-sub {
     height:auto;
