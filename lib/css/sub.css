@@ -536,12 +536,18 @@ section {
   .section-1 .section__desc {
     font-size:22px;
   }
+  .section-sub {
+    height:220px;
+  }
   .section-sub__txt-wrapper {
     width:60%;
     padding:20px 30px;
   }
   .section-sub__img-wrapper {
     width:40%;
+  }
+  .section-sub__txt-wrapper li {
+    font-size:18px;
   }
   .sub_urethan .section-sub.first {
     height:auto;
