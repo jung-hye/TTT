@@ -124,10 +124,13 @@
 <script src="lib/js/common.js"></script>
 <script>
 function desktopScrollAnimation() {
+    console.log('resizse');
     function setValue() {
         // if(matchMedia("screen and (min-width: 769px)").matches) {
-        if(document.body.clientWidth > 1024) {
-            var s = skrollr.init({
+        var s;
+
+        if(document.body.clientWidth > 991) {
+            s = skrollr.init({
                 smoothScrolling: true,
                 smoothScrollingDuration: 200,
             });
@@ -136,10 +139,8 @@ function desktopScrollAnimation() {
                 var scrollValue = $(window).scrollTop();
                 
                 if(scrollValue >= 450) {
-                    // console.log(scrollValue);
                     // 헤더 뷰포트 최상단 위치 시 fixed 클래스 부여
                     var headerOffset = $('.header')[0].getBoundingClientRect().top;
-                    // console.log(headerOffset);
                     if(headerOffset <= 0) {
                         $(".header").addClass('fixed');
                         if(scrollValue < 1120) {
@@ -149,7 +150,7 @@ function desktopScrollAnimation() {
                 }
             });
         }else {
-            console.log(document.body.clientWidth)
+            s = skrollr.init().destroy();
             return
         }
     }
@@ -176,11 +177,9 @@ $(".bg-dim").on("click", function () {
 // 사용안함
 function parallaxScrolling () {
     var viewportWidth;
-    alert(1);
 
     setTimeout(function(){
         viewportWidth = $(window).width();
-        // alert(viewportWidth);
         console.log(viewportWidth)
         animate();
     }, 500)
@@ -189,7 +188,6 @@ function parallaxScrolling () {
     function animate() {
         // if(matchMedia("screen and (min-width: 769px)").matches) {
         if(viewportWidth > 769) {
-            // alert("desktop");
             function scrollSetting() {
                 if(scrollValue < 150 ) {
                     // 메인 로고 크기 1
@@ -277,7 +275,6 @@ function parallaxScrolling () {
                 scrollSetting();
             });
         }else {
-            alert('mobile');
             // 헤더 안보이도록
             $(".header").css("display", "none");
             // 헤더 클래스 초기화

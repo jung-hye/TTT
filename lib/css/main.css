@@ -272,7 +272,7 @@ section {
     top:350px;
   }
   .section-1 .logo img {
-    width:80px;
+    width:120px;
   }
   .section-1 .scroll {
     bottom:30px;
@@ -291,5 +291,8 @@ section {
 @media (max-width: 575px) {
   section {
     height:420px;
+  }
+  .section-1 .logo img {
+    width:80px;
   }
 }
