@@ -16,7 +16,7 @@
     <title>Think Top Technology</title>
 </head>
 <body>
-    <div id="" class="wrapper main">
+    <div id="skrollr-body" class="wrapper main">
         <div class="bg-dim"></div>
 
         <header class="header" data-0="display:none;" data-550="display:block;"  data-smooth-scrolling="off" >
@@ -129,6 +129,9 @@ function desktopScrollAnimation() {
             s = skrollr.init({
                 smoothScrolling: true,
                 smoothScrollingDuration: 200,
+                mobileCheck: function() {
+                    return (/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera);
+                }
             });
 
             $('html, body').bind('DOMMouseScroll MouseScrollEvent MozMousePixelScroll wheel scroll', function () {
@@ -153,7 +156,7 @@ function desktopScrollAnimation() {
 
     setValue();
 }
-desktopScrollAnimation();
+// desktopScrollAnimation();
 </script>
 <script type="text/javascript">
 // 어두운 배경 버튼 클릭 토글
