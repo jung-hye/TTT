@@ -143,19 +143,19 @@ section {
   height:100%;
 }
 .first .section-sub__img-wrapper {
-  /* background-image: url(../images/img_section-sub-1.jpg); */
+  background-image: url(../images/img_section-sub-1.jpg);
   background-color:#ededed;
 }
 .second .section-sub__img-wrapper {
-  /* background-image: url(../images/img_section-sub-2.jpg); */
+  background-image: url(../images/img_section-sub-2.jpg);
   background-color:#ededed;
 }
 .third .section-sub__img-wrapper {
-  /* background-image: url(../images/img_section-sub-3.jpg); */
+  background-image: url(../images/img_section-sub-3.jpg);
   background-color:#ededed;
 }
 .fourth .section-sub__img-wrapper {
-  /* background-image: url(../images/img_section-sub-4.jpg); */
+  background-image: url(../images/img_section-sub-4.jpg);
   background-color:#ededed;
 }
 
