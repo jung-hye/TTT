@@ -165,9 +165,9 @@ function desktopScrollAnimation() {
 </script>
 <script>
 function answer() {
-  console.log($(window).width())
+  // console.log(window.innerWidth);
   // Test here to check if on desktop / large screens.
-  if ( $(window).width() > 1023 ) {
+  if ( window.innerWidth > 1023 ) {
 
   // Save the instance of Skrollr to the Window.
   window.skrollrInstance = skrollr.init({
