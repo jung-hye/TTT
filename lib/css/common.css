@@ -2,7 +2,10 @@ html {
   /* font-family: 'Noto Sans KR', sans-serif; */
   font-family:'Noto Sans KR', '돋움', 'Dotum', Arial, Helvetica, sans-serif;
   line-height:1.2;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
+}
+body {
+  width:100%;
 }
 
 /* common */
