@@ -16,7 +16,7 @@
     <title>Think Top Technology</title>
 </head>
 <body>
-    <div id="skrollr-body" class="wrapper main">
+    <div class="wrapper main">
         <div class="bg-dim"></div>
 
         <header class="header" data-0="display:none;" data-550="display:block;"  data-smooth-scrolling="off" >
@@ -121,10 +121,9 @@
 <![endif]-->
 <script src="lib/js/common.js"></script>
 <script>
+          var s;
 function desktopScrollAnimation() {
     function setValue() {
-        var s;
-
         if(document.body.clientWidth > 1023) {
             s = skrollr.init({
                 smoothScrolling: true,
@@ -149,8 +148,11 @@ function desktopScrollAnimation() {
                 }
             });
         }else {
-            s = skrollr.init().destroy();
-            return
+          if(s) {
+            console.log(s);
+            s.destroy();
+            console.log(s);
+          }
         }
     }
 
