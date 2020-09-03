@@ -155,20 +155,20 @@ function destroySkrollr() {
     }
 }
 
-function skrollrInit() {
+function skrollrSetting() {
     var type = navigator.userAgent;
 
     if(type.match(/iPad|Tablet|Android|iPhone|iPod/i)) {
-        alert(1);
-        console.log(type);
+        // alert(1);
+        // console.log(type);
         destroySkrollr();
     }else if(window.innerWidth > 1023) {
-        alert(2);
-        console.log(type);
+        // alert(2);
+        // console.log(type);
         initSkrollr();
     }else {
-        alert(3);
-        console.log(type);
+        // alert(3);
+        // console.log(type);
         destroySkrollr();
     }
 
@@ -194,8 +194,8 @@ function skrollrInit() {
     }
     */
 }
-skrollrInit();
-window.addEventListener('resize', skrollrInit);
+skrollrSetting();
+window.addEventListener('resize', skrollrSetting);
 </script>
 <script type="text/javascript">
 // 어두운 배경 버튼 클릭 토글
