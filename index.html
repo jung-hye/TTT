@@ -13,14 +13,12 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="lib/css/common.css">
     <link rel="stylesheet" href="lib/css/main.css">
-    <!-- <script src="lib/js/jquery-3.5.1.slim.min.js"></script> -->
     <title>Think Top Technology</title>
 </head>
 <body>
-    <div id="" class="wrapper main">
+    <div  class="wrapper main">
         <div class="bg-dim"></div>
-
-        <header class="header" data-0="display:none;" data-550="display:block;"  data-smooth-scrolling="off" >
+        <header id="skollr-body" class="header" data-0="display:none;" data-550="display:block;"  data-smooth-scrolling="off" >
             <nav class="nav">
                 <ul>
                     <li>
@@ -115,53 +113,84 @@
             </div>
         </footer>
     </div>
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous" type="text/javascript"></script> -->
-<script src="lib/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="lib/js/jquery-3.5.1.slim.min.js" type="text/javascript"></script>
 <script src="lib/js/skrollr.min.js"></script>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/js/skrollr.ie.min.js"></script>
 <![endif]-->
 <script src="lib/js/common.js"></script>
 <script>
+var s;
+function setFixedClassOnHeader() {
+  $('html, body').bind('DOMMouseScroll MouseScrollEvent MozMousePixelScroll wheel scroll', function () {
+    var scrollValue = $(window).scrollTop();
+    
+    if(scrollValue >= 450) {
+        // 헤더 뷰포트 최상단 위치 시 fixed 클래스 부여
+        var headerOffset = $('.header')[0].getBoundingClientRect().top;
+        if(headerOffset <= 0) {
+            $(".header").addClass('fixed');
+            if(scrollValue < 1120) {
+                $(".header").removeClass('fixed');
+            }
+        }
+      }
+  });
+}
 function desktopScrollAnimation() {
     function setValue() {
-        // if(matchMedia("screen and (min-width: 769px)").matches) {
-        if(document.body.clientWidth > 1024) {
-            var s = skrollr.init({
+        if(document.body.clientWidth > 1023) {
+            s = skrollr.init({
                 smoothScrolling: true,
                 smoothScrollingDuration: 200,
-            });
-
-            $('html, body').bind('DOMMouseScroll MouseScrollEvent MozMousePixelScroll wheel scroll', function () {
-                var scrollValue = $(window).scrollTop();
-                
-                if(scrollValue >= 450) {
-                    // console.log(scrollValue);
-                    // 헤더 뷰포트 최상단 위치 시 fixed 클래스 부여
-                    var headerOffset = $('.header')[0].getBoundingClientRect().top;
-                    // console.log(headerOffset);
-                    if(headerOffset <= 0) {
-                        $(".header").addClass('fixed');
-                        if(scrollValue < 1120) {
-                            $(".header").removeClass('fixed');
-                        }
-                    }
+                mobileCheck: function() {
+                    return (/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera);
                 }
             });
+
+            
         }else {
-            console.log(document.body.clientWidth)
-            return
+          if(s) {
+            s.destroy();
+          }
         }
     }
 
-    setValue()
+    setValue();
 }
-desktopScrollAnimation();
+// desktopScrollAnimation();
 
+// 윈도우 리사이즈 시 모바일 용으로 메뉴 초기화
+// $(window).on("resize", desktopScrollAnimation);
+</script>
+<script>
+function answer() {
+  // console.log(window.innerWidth);
+  // Test here to check if on desktop / large screens.
+  if ( window.innerWidth > 1023 ) {
+
+  // Save the instance of Skrollr to the Window.
+  window.skrollrInstance = skrollr.init({
+      forceHeight: false
+  });
+  setFixedClassOnHeader();
+  
+  // If not on a large screen.
+  } else {
+
+    //  If Skrollr is NOT undefined, let's do the work.
+    if ( window.skrollrInstance !== undefined ) {
+        // Use Skrollr's destroy() method on the instance.
+        window.skrollrInstance.destroy();
+        // Now set the variable to be completely undefined.
+        window.skrollrInstance = undefined;
+    }
+  }
+}
+answer();
+window.addEventListener('resize', answer);
 </script>
 <script type="text/javascript">
-
-
 // 어두운 배경 버튼 클릭 토글
 $(".bg-dim").on("click", function () {
     $(".bg-dim").css("display", "none");
@@ -173,130 +202,7 @@ $(".bg-dim").on("click", function () {
 })
 
 
-// 사용안함
-function parallaxScrolling () {
-    var viewportWidth;
-    alert(1);
-
-    setTimeout(function(){
-        viewportWidth = $(window).width();
-        // alert(viewportWidth);
-        console.log(viewportWidth)
-        animate();
-    }, 500)
-    
-    // 데스크탑에서만 실행
-    function animate() {
-        // if(matchMedia("screen and (min-width: 769px)").matches) {
-        if(viewportWidth > 769) {
-            // alert("desktop");
-            function scrollSetting() {
-                if(scrollValue < 150 ) {
-                    // 메인 로고 크기 1
-                    $(".main-logo").css("transform", "scale(1)");
-                    // 메인 로고 투명도 1
-                    $(".main-logo").css("opacity", "1");
-                    // 메뉴 로고 투명도 0
-                    $(".menu-logo").find('img').css("opacity", "0");
-                    // Your inspiration 텍스트 투명도 0
-                    $(".section__tit-2").css("opacity", "0");
-                    // Think Top Technology 텍스트 투명도 1
-                    $(".section-1").find(".section__tit").css("opacity", "1");
-
-                } else if(scrollValue >= 150 && scrollValue < 200) {
-                    $(".main-logo").css("transform", "scale(.9)");
-
-                    $(".main-logo").css("opacity", "1");
-                    $(".section-1").find(".section__tit").css("opacity", "1");
-                    $(".section__tit-2").css("opacity", "0");
-
-                } else if(scrollValue >= 200 && scrollValue < 250) {
-                    $(".main-logo").css("transform", "scale(.8)");
-
-                    $(".main-logo").css("opacity", "1");
-                    $(".section-1").find(".section__tit").css("opacity", "1");
-                    $(".section__tit-2").css("opacity", "0");
-
-                } else if(scrollValue >= 250 && scrollValue < 300) {
-                    $(".main-logo").css("transform", "scale(.7)");
-
-                    $(".main-logo").css("opacity", "1");
-                    $(".section-1").find(".section__tit").css("opacity", "1");
-                    $(".section__tit-2").css("opacity", "0");
-
-                } else if(scrollValue >= 300 && scrollValue < 350) {
-                    $(".main-logo").css("transform", "scale(.65)");
-
-                    $(".main-logo").css("opacity", "1");
-                    $(".section-1").find(".section__tit").css("opacity", "1");
-                    $(".section__tit-2").css("opacity", "0");
-
-                } else if(scrollValue >= 350 && scrollValue < 400) {
-                    $(".main-logo").css("transform", "scale(.6)");
-
-                    $(".main-logo").css("opacity", "1");
-                    $(".section-1").find(".section__tit").css("opacity", "1");
-                    $(".section__tit-2").css("opacity", "0");
-
-                } else if(scrollValue >= 400 && scrollValue < 510) {
-                    $(".main-logo").css("transform", "scale(.55)");
-                    $(".section-1").find(".section__tit").css("opacity", "0");
-                    $(".section__tit-2").css("opacity", "1");   
-
-                    $(".main-logo").css("opacity", "1");
-                    // 메뉴 로고 안보이게
-                    $(".menu-logo").find('img').css("opacity", "0");
-                    // 메뉴 안보이게
-                    setTimeout(function(){
-                        $(".header").css("display", "none");
-                    }, 60)
-                } else if(scrollValue >= 510) {
-                    // 메인 로고 안보이게
-                    $(".main-logo").css("opacity", "0");
-                    // nav 로고 보이게
-                    $(".menu-logo").find('img').css("opacity", "1");
-                    // 헤더 보이게
-                    $(".header").css("display", "block");
-                    // 헤더 뷰포트 최상단 위치 시 fixed 클래스 부여
-                    var headerOffset = $('.header')[0].getBoundingClientRect().top;
-                    if(headerOffset <= 0) {
-                        $(".header").addClass('fixed');
-                        if(scrollValue < 1120) {
-                            $(".header").removeClass('fixed');
-                        }
-                    }
-                }
-            }
-            var scrollValue = $(window).scrollTop();
-            scrollSetting();
-
-            // scroll event binding for IE
-            $('html, body').bind('DOMMouseScroll MouseScrollEvent MozMousePixelScroll wheel scroll', function () {
-                scrollValue = $(window).scrollTop();
-                console.log(scrollValue);
-                scrollSetting();
-            });
-        }else {
-            alert('mobile');
-            // 헤더 안보이도록
-            $(".header").css("display", "none");
-            // 헤더 클래스 초기화
-            if($(".header").hasClass("fixed")) {
-                $(".header").removeClass("fixed");
-            }
-        }
-    }
-
-
-}
-// parallaxScrolling();
-
-// 윈도우 리사이즈 시 패럴랙스 재실행
-// $(window).on("resize", parallaxScrolling);
-// 윈도우 리사이즈 시 모바일 용으로 메뉴 초기화
-$(window).on("resize", desktopScrollAnimation);
 </script>
-
 
 </body>
 </html>

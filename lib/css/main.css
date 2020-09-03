@@ -19,10 +19,12 @@ section {
   position: relative;
   /* height:100vh; */
   height:850px;
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:50% 0%;
   text-align:center;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position:50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .section__tit-wrapper {
   position:absolute;
@@ -181,11 +183,29 @@ section {
     bottom:120px;
   }
 }
+.footer {
+  position:relative;
+  height:950px;
+  background-image:url(../images/bg_footer.jpg);
+  background-size:2000px;
+  background-repeat:no-repeat;
+  background-position:50% 100%;
+  text-align:center;
+}
+.footer__inner {
+  position:absolute;
+  left:50%;
+  bottom:2%;
+  width:100%;
+  -webkit-transform:translateX(-50%);
+  transform:translateX(-50%);
+  color:#fff;
+}
 
 /* Media Query */
 /* 태블릿 (가로 해상도가 992px 보다 작은 화면에 적용) */
 /* 태블릿 및 작은 데탑(가로 해상도가 1024px 보다 작은 화면에 적용) */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   body.menu_mobile {
     overflow:hidden;
     height:100%;
@@ -238,9 +258,12 @@ section {
   section {
     height:100%;
     height:500px;
+    background-attachment: scroll;
   }
   .footer {
     height:60vh;
+    background-size:auto 110%;
+    background-position:bottom;
   }
   .footer span {
     font-size:14px;
@@ -272,7 +295,7 @@ section {
     top:350px;
   }
   .section-1 .logo img {
-    width:80px;
+    width:120px;
   }
   .section-1 .scroll {
     bottom:30px;
@@ -291,5 +314,12 @@ section {
 @media (max-width: 575px) {
   section {
     height:420px;
+  }
+  .section-1 .logo img {
+    width:80px;
+  }
+  .footer {
+    height:60vh;
+    background-size:300% auto;
   }
 }
