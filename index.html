@@ -120,23 +120,7 @@
 <![endif]-->
 <script src="lib/js/common.js"></script>
 <script>
-function setFixedClassOnHeader() {
-    $('html, body').bind('DOMMouseScroll MouseScrollEvent MozMousePixelScroll wheel scroll', function () {
-        var scrollValue = $(window).scrollTop();
-        
-        if(scrollValue >= 450) {
-            // 헤더 뷰포트 최상단 위치 시 fixed 클래스 부여
-            var headerOffset = $('.header')[0].getBoundingClientRect().top;
-            if(headerOffset <= 0) {
-                $(".header").addClass('fixed');
-                if(scrollValue < 1120) {
-                    $(".header").removeClass('fixed');
-                }
-            }
-        }
-    });
-}
-
+// Skrollr 스크립트 intialize
 function initSkrollr() {
     // Save the instance of Skrollr to the Window.
     window.skrollrInstance = skrollr.init({
@@ -145,6 +129,7 @@ function initSkrollr() {
     setFixedClassOnHeader();
 }
 
+// Skrollr 스크립트 destroy
 function destroySkrollr() {
     //  If Skrollr is NOT undefined, let's do the work.
     if ( window.skrollrInstance !== undefined ) {
@@ -154,21 +139,15 @@ function destroySkrollr() {
         window.skrollrInstance = undefined;
     }
 }
-
+// Skrollr 스크립트 기기별로 셋팅
 function skrollrSetting() {
     var type = navigator.userAgent;
 
     if(type.match(/iPad|Tablet|Android|iPhone|iPod/i)) {
-        // alert(1);
-        // console.log(type);
         destroySkrollr();
     }else if(window.innerWidth > 1023) {
-        // alert(2);
-        // console.log(type);
         initSkrollr();
     }else {
-        // alert(3);
-        // console.log(type);
         destroySkrollr();
     }
 
@@ -194,10 +173,6 @@ function skrollrSetting() {
     }
     */
 }
-skrollrSetting();
-window.addEventListener('resize', skrollrSetting);
-</script>
-<script type="text/javascript">
 // 어두운 배경 버튼 클릭 토글
 $(".bg-dim").on("click", function () {
     $(".bg-dim").css("display", "none");
@@ -207,7 +182,9 @@ $(".bg-dim").on("click", function () {
         $("body").toggleClass("menu_mobile");
     }
 })
+changeSection1Background();
+skrollrSetting();
+window.addEventListener('resize', skrollrSetting);
 </script>
-
 </body>
 </html>
