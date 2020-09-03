@@ -122,73 +122,48 @@
 <script>
 var s;
 function setFixedClassOnHeader() {
-  $('html, body').bind('DOMMouseScroll MouseScrollEvent MozMousePixelScroll wheel scroll', function () {
-    var scrollValue = $(window).scrollTop();
-    
-    if(scrollValue >= 450) {
-        // 헤더 뷰포트 최상단 위치 시 fixed 클래스 부여
-        var headerOffset = $('.header')[0].getBoundingClientRect().top;
-        if(headerOffset <= 0) {
-            $(".header").addClass('fixed');
-            if(scrollValue < 1120) {
-                $(".header").removeClass('fixed');
+    $('html, body').bind('DOMMouseScroll MouseScrollEvent MozMousePixelScroll wheel scroll', function () {
+        var scrollValue = $(window).scrollTop();
+        
+        if(scrollValue >= 450) {
+            // 헤더 뷰포트 최상단 위치 시 fixed 클래스 부여
+            var headerOffset = $('.header')[0].getBoundingClientRect().top;
+            if(headerOffset <= 0) {
+                $(".header").addClass('fixed');
+                if(scrollValue < 1120) {
+                    $(".header").removeClass('fixed');
+                }
             }
         }
-      }
-  });
+    });
 }
-function desktopScrollAnimation() {
-    function setValue() {
-        if(document.body.clientWidth > 1023) {
-            s = skrollr.init({
-                smoothScrolling: true,
-                smoothScrollingDuration: 200,
-                mobileCheck: function() {
-                    return (/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera);
-                }
-            });
-
-            
-        }else {
-          if(s) {
-            s.destroy();
-          }
-        }
-    }
-
-    setValue();
-}
-// desktopScrollAnimation();
-
-// 윈도우 리사이즈 시 모바일 용으로 메뉴 초기화
-// $(window).on("resize", desktopScrollAnimation);
 </script>
 <script>
-function answer() {
-  // console.log(window.innerWidth);
+alert(navigator.userAgent);
+function skrollrInit() {
   // Test here to check if on desktop / large screens.
-  if ( window.innerWidth > 1023 ) {
+    if ( window.innerWidth > 1023 ) {
 
-  // Save the instance of Skrollr to the Window.
-  window.skrollrInstance = skrollr.init({
-      forceHeight: false
-  });
-  setFixedClassOnHeader();
-  
-  // If not on a large screen.
-  } else {
+    // Save the instance of Skrollr to the Window.
+    window.skrollrInstance = skrollr.init({
+        forceHeight: false
+    });
+    setFixedClassOnHeader();
+    
+    // If not on a large screen.
+    } else {
 
-    //  If Skrollr is NOT undefined, let's do the work.
-    if ( window.skrollrInstance !== undefined ) {
-        // Use Skrollr's destroy() method on the instance.
-        window.skrollrInstance.destroy();
-        // Now set the variable to be completely undefined.
-        window.skrollrInstance = undefined;
+        //  If Skrollr is NOT undefined, let's do the work.
+        if ( window.skrollrInstance !== undefined ) {
+            // Use Skrollr's destroy() method on the instance.
+            window.skrollrInstance.destroy();
+            // Now set the variable to be completely undefined.
+            window.skrollrInstance = undefined;
+        }
     }
-  }
 }
-answer();
-window.addEventListener('resize', answer);
+skrollrInit();
+window.addEventListener('resize', skrollrInit);
 </script>
 <script type="text/javascript">
 // 어두운 배경 버튼 클릭 토글
@@ -200,8 +175,6 @@ $(".bg-dim").on("click", function () {
         $("body").toggleClass("menu_mobile");
     }
 })
-
-
 </script>
 
 </body>
