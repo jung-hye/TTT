@@ -120,7 +120,6 @@
 <![endif]-->
 <script src="lib/js/common.js"></script>
 <script>
-var s;
 function setFixedClassOnHeader() {
     $('html, body').bind('DOMMouseScroll MouseScrollEvent MozMousePixelScroll wheel scroll', function () {
         var scrollValue = $(window).scrollTop();
@@ -137,19 +136,51 @@ function setFixedClassOnHeader() {
         }
     });
 }
-</script>
-<script>
-alert(navigator.userAgent);
-function skrollrInit() {
-  // Test here to check if on desktop / large screens.
-    if ( window.innerWidth > 1023 ) {
 
+function initSkrollr() {
     // Save the instance of Skrollr to the Window.
     window.skrollrInstance = skrollr.init({
         forceHeight: false
     });
     setFixedClassOnHeader();
-    
+}
+
+function destroySkrollr() {
+    //  If Skrollr is NOT undefined, let's do the work.
+    if ( window.skrollrInstance !== undefined ) {
+        // Use Skrollr's destroy() method on the instance.
+        window.skrollrInstance.destroy();
+        // Now set the variable to be completely undefined.
+        window.skrollrInstance = undefined;
+    }
+}
+
+function skrollrInit() {
+    var type = navigator.userAgent;
+
+    if(type.match(/iPad|Tablet|Android|iPhone|iPod/i)) {
+        alert(1);
+        console.log(type);
+        destroySkrollr();
+    }else if(window.innerWidth > 1023) {
+        alert(2);
+        console.log(type);
+        initSkrollr();
+    }else {
+        alert(3);
+        console.log(type);
+        destroySkrollr();
+    }
+
+    /*
+    // Test here to check if on desktop / large screens.
+    if ( window.innerWidth > 1023 ) {
+
+        // Save the instance of Skrollr to the Window.
+        window.skrollrInstance = skrollr.init({
+            forceHeight: false
+        });
+        setFixedClassOnHeader();
     // If not on a large screen.
     } else {
 
@@ -161,6 +192,7 @@ function skrollrInit() {
             window.skrollrInstance = undefined;
         }
     }
+    */
 }
 skrollrInit();
 window.addEventListener('resize', skrollrInit);
