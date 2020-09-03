@@ -77,8 +77,8 @@ section {
   justify-content:center;
   align-items:center;
   background-color:grey;
-  background-image: url(../images/bg_main.jpg);
-
+  background-image: url(../images/bg_main1.jpg);
+  background-position:0 0;
 }
 .section-1 .section__tit {
   position:relative;
